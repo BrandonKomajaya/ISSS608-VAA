@@ -1,7 +1,7 @@
 ---
 title: "Hands-on_Ex03"
 author: "Brandon Komajaya"
-date: "24 April 2026"
+date: "30 April 2026"
 date-modified: "last-modified"
 format: html
 execute:
@@ -26,7 +26,7 @@ pacman::p_load(ggiraph, plotly,
 exam_data <- read_csv("data/Exam_data.csv")
 ```
 
-# Reading Data File
+# Interactivity
 
 ```{r}
 p <- ggplot(data=exam_data, 
@@ -46,7 +46,7 @@ girafe(
 
 ```
 
-# Reading Data File
+# Interactivity (2)
 
 ```{r}
 exam_data$tooltip <- c(paste0(     
@@ -69,7 +69,7 @@ girafe(
 )
 ```
 
-# Reading Data File
+# Interactivity (3)
 
 ```{r}
 tooltip_css <- "background-color:white; #<<
@@ -248,3 +248,23 @@ DT::datatable(exam_data, class= "compact")
 ```
 
 # Crosstalk Data Table
+
+```{r}
+# 1. Create the shared data object
+d <- highlight_key(exam_data)
+
+# 2. Build the standard ggplot (Keep aes clean)
+p <- ggplot(d, aes(ENGLISH, MATHS)) + 
+  geom_point(size = 1) +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))
+
+# 3. Apply the highlighting here (This is where 'on' and 'off' live)
+gg <- highlight(ggplotly(p), 
+                on = "plotly_selected", 
+                off = "plotly_deselect")
+
+# 4. Display with crosstalk
+crosstalk::bscols(gg, 
+                  DT::datatable(d), 
+                  widths = 5)   
+```

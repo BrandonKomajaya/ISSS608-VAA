@@ -94,6 +94,29 @@ girafe(
 )                                        
 ```
 
+# Alternative 1# : Separating by Race
+
+```{r}
+
+p <- ggplot(exam_data, aes(x = RACE, y = MATHS, fill = RACE)) +
+  # 1. The Cloud (Density)
+  # If you don't have ggdist installed, you can comment this out
+  # stat_halfeye(adjust = .5, width = .6, justification = -.3, .width = 0, point_colour = NA) +
+  
+  # 2. The Rain (Dots)
+  geom_dotplot_interactive(
+    aes(tooltip = ID),
+    binaxis = "y",         # Crucial: This tells R to bin along the MATHS scores
+    stackdir = "center",   # Centers the dots on the race category
+    method = "dotdensity", 
+    dotsize = 0.8          # Start at 0.8 and decrease if they overlap
+  ) +
+  coord_flip() + 
+  theme_minimal()
+
+girafe(ggobj = p)
+```
+
 # Graphing Race
 
 ```{r}
@@ -121,6 +144,51 @@ gg_point <- ggplot(data=exam_data,
 girafe(ggobj = gg_point,
        width_svg = 8,
        height_svg = 8*0.618)
+```
+
+# Alternative #2: Added Mean and Standard Error
+
+```{r}
+library(tidyverse)
+library(ggiraph)
+library(scales) # for number formatting
+
+# 1. Pre-calculate the mean, SE, and build the tooltip string using dplyr
+exam_summary <- exam_data %>%
+  group_by(RACE) %>%
+  summarise(
+    mean_maths = mean(MATHS, na.rm = TRUE),
+    n = n(),
+    sd_maths = sd(MATHS, na.rm = TRUE),
+    # Standard Error (SE)
+    se = sd_maths / sqrt(n),
+    ymin = mean_maths - se,
+    ymax = mean_maths + se,
+    # Build a clean, formatted tooltip string
+    tooltip = paste0(
+      "<b>Mean Maths Score:</b> ", number(mean_maths, accuracy = 0.1),
+      "<br><b>+/-:</b> ", number(se, accuracy = 0.1)
+    )
+  )
+
+# 2. Build the chart using the pre-calculated data and native interactive geoms
+# We map 'tooltip' in the main aes()
+gg_clean <- ggplot(exam_summary, aes(x = RACE, y = mean_maths, tooltip = tooltip)) +
+  # Use the specialized geom_col_interactive
+  geom_col_interactive(fill = "lightblue", color = "white") +
+  # Use geom_errorbar with the pre-calculated min/max
+  geom_errorbar(aes(ymin = ymin, ymax = ymax), 
+                width = 0.2, color = "black", size = 0.5) +
+  # Cleaner styling
+  theme_minimal() +
+  labs(
+    title = "Mean Maths Scores by Race with Standard Error",
+    y = "Average Score",
+    x = "Race/Ethnicity"
+  )
+
+# 3. Render the interactive chart
+girafe(ggobj = gg_clean)
 ```
 
 # Plotting Math
@@ -247,7 +315,7 @@ DT::datatable(exam_data, class= "compact")
 
 ```
 
-# Crosstalk Data Table
+# Cross talk Data Table
 
 ```{r}
 # 1. Create the shared data object
@@ -267,6 +335,107 @@ gg <- highlight(ggplotly(p),
 crosstalk::bscols(gg, 
                   DT::datatable(d), 
                   widths = 5)   
+```
+
+# Alternative #3 :Added Filter to Interactive Table
+
+```{r}
+library(plotly)
+library(crosstalk)
+library(DT)
+library(dplyr)
+
+d <- SharedData$new(exam_data)
+
+p <- ggplot(d, aes(ENGLISH, MATHS)) +
+  geom_point(size = 2, alpha = 0.6) +
+  theme_minimal() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))
+
+
+gg <- highlight(ggplotly(p), 
+                on = "plotly_selected", 
+                off = "plotly_deselect",
+                persistent = FALSE)
+
+bscols(
+  widths = c(3, 9), # Left column width 3/12, Right column width 9/12
+  list(
+    filter_checkbox("gender", "Filter by Gender", d, ~GENDER),
+    filter_slider("maths_score", "Maths Range", d, ~MATHS, width = "100%")
+  ),
+  list(
+    gg,
+    datatable(d, extensions = 'Scroller', options = list(scrollY = 200, scrollCollapse = TRUE))
+  )
+)
+```
+
+# Alternative #4 :Added Search Bar
+
+```{r}
+library(plotly)
+library(crosstalk)
+library(DT)
+
+# 1. Initialize SharedData
+d <- SharedData$new(exam_data)
+
+# 2. Add Filter Widgets as a header row
+# This allows users to narrow down data before selecting points
+filter_row <- bscols(
+  filter_select("race", "Select Race", d, ~RACE),
+  filter_checkbox("gender", "Gender", d, ~GENDER, inline = TRUE)
+)
+
+# 3. Create the Plot
+p <- ggplot(d, aes(ENGLISH, MATHS, color = RACE)) +
+  geom_point(alpha = 0.5) +
+  theme_minimal()
+
+gg <- highlight(ggplotly(p), on = "plotly_selected", off = "plotly_deselect")
+
+# 4. Display in a vertical stack
+# widths = 12 makes them take up the full page width
+bscols(widths = 12,
+       filter_row,
+       gg,
+       datatable(d, options = list(pageLength = 5))
+)
+```
+
+# Alternative #5 :Added Client Ready Table
+
+```{r}
+library(plotly)
+library(crosstalk)
+library(DT)
+
+d <- SharedData$new(exam_data)
+
+p <- ggplot(d, aes(ENGLISH, MATHS)) +
+  geom_point(color = "steelblue", size = 1.5) +
+  theme_light()
+
+gg <- highlight(ggplotly(p), on = "plotly_selected", off = "plotly_deselect")
+
+# Advanced DT with Buttons
+# Note: 'dom = "Bfrtip"' is the magic string that enables buttons
+custom_table <- datatable(
+  d,
+  extensions = 'Buttons',
+  options = list(
+    dom = 'Bfrtip',
+    buttons = c('copy', 'csv', 'excel', 'pdf'),
+    pageLength = 10
+  )
+)
+
+# Display Side-by-Side with specific width ratios
+bscols(widths = c(6, 6),
+       gg,
+       custom_table
+)
 ```
 
 # Installing and loading the required libraries

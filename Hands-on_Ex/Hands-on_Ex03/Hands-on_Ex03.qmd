@@ -94,7 +94,7 @@ girafe(
 )                                        
 ```
 
-# Alternative 1# : Separating by Race
+# Alternative #1 : Separating by Race
 
 ```{r}
 

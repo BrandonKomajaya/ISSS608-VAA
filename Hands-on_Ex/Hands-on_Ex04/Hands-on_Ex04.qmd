@@ -11,7 +11,7 @@ execute:
   freeze: true
 ---
 
-### Visualising Distribution
+# Visualising Distribution
 
 ```{r}
 pacman::p_load(ggdist, ggridges, ggthemes,
@@ -86,7 +86,7 @@ ggplot(exam,
   theme_ridges()
 ```
 
-#### Alternative #1 Displaying Maths x Class
+## Alternative #1 Displaying Maths x Class
 
 ```{r}
 ggplot(exam,
@@ -178,7 +178,7 @@ ggplot(exam,
   theme_economist()
 ```
 
-#### Alternative #2 Displaying Race x Math
+## Alternative #2 Displaying Race x Math
 
 ```{r}
 ggplot(exam, 
@@ -198,7 +198,7 @@ ggplot(exam,
   theme_economist()
 ```
 
-### Viewing Statistical Distribution
+# Viewing Statistical Distribution
 
 ```{r}
 set.seed(1234)
@@ -222,7 +222,7 @@ ggbetweenstats(
 )
 ```
 
-#### Alternative #3 Displaying Race x English
+## Alternative #3 Displaying Race x English
 
 ```{r}
 ggbetweenstats(
@@ -271,7 +271,7 @@ ggbarstats(exam1,
            y = GENDER)
 ```
 
-#### Alternative #4 Comparing Math to Race Groups
+## Alternative #4 Comparing Math to Race Groups
 
 ```{r}
 ggbarstats(exam1, 
@@ -279,7 +279,7 @@ ggbarstats(exam1,
            y = RACE)
 ```
 
-#### Alternative #5 Racial Distribution for each Class
+## Alternative #5 Racial Distribution for each Class
 
 ```{r}
 ggbarstats(exam1, 
@@ -287,7 +287,7 @@ ggbarstats(exam1,
            y = CLASS)
 ```
 
-### Visualising Uncertainty
+# Visualising Uncertainty
 
 ```{r}
 pacman::p_load(plotly, crosstalk, DT, 
@@ -447,7 +447,7 @@ ggplot(data = exam,
   transition_states(.draw, 1, 3)
 ```
 
-### Building Funnel Plot with R
+# Building Funnel Plot with R
 
 ```{r}
 pacman::p_load(tidyverse, FunnelPlotR, plotly, knitr)

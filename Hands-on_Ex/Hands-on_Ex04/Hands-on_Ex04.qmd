@@ -13,6 +13,18 @@ execute:
 
 # Visualising Distribution
 
+Visualizing distribution (e.g., using histograms or density plots) is the first step in any analysis. It is used to:
+
+- **Identify Outliers:** Spotting data entry errors or extreme cases that could skew your results.
+
+- **Check Normality:** Many statistical tests (like t-tests) assume a normal distribution; visualizing it helps you decide whether to use parametric or non-parametric methods.
+
+- **Segment Data:** Discovering if your data is "bimodal" (having two peaks), which might suggest your dataset actually contains two distinct groups (e.g., two different types of customers).
+
+First, we load the necessary R packages. In this exercise, we will primarily use **tidyverse** for data wrangling and **ggstatsplot** for creating graphics with included statistical test results.
+
+Next, we import the dataset into the R environment. We will use `read_csv()` to load the data and examine its structure to ensure the variables are correctly typed (e.g., categorical variables as factors).
+
 ```{r}
 pacman::p_load(ggdist, ggridges, ggthemes,
                colorspace, tidyverse, 
@@ -200,6 +212,14 @@ ggplot(exam,
 
 # Viewing Statistical Distribution
 
+**Application:** Comparative Analysis and Hypothesis Testing. This goes a step further by adding statistical rigor to the visual.
+
+- **Comparing Groups:** When you compare the salary distributions of two departments, adding the mean, median, and p-values directly to the plot allows you to see not just *if* they are different, but *how* significant that difference is.
+
+- **Quality Control:** In manufacturing, viewing the statistical distribution of a product's dimensions helps determine if the process is stable and meeting specifications.
+
+In this section, we use `gghistostats()` to visualize the distribution of a continuous variable and perform a one-sample test. This allows us to compare the sample mean against a designated test value (null hypothesis)
+
 ```{r}
 set.seed(1234)
 
@@ -211,6 +231,8 @@ gghistostats(
   xlab = "English scores"
 )
 ```
+
+When comparing means across more than two groups, we use the One-way ANOVA method via `ggbetweenstats()`. This visualization helps identify variance between multiple categories and includes post-hoc test results if significant differences are found
 
 ```{r}
 ggbetweenstats(
@@ -247,6 +269,8 @@ ggbetweenstats(
   messages = FALSE
 )
 ```
+
+To examine the relationship between two continuous variables, we use `ggscatterstats()`. This creates a scatterplot with a regression line and displays the correlation coefficient ($r$) and p-value.
 
 ```{r}
 ggscatterstats(
@@ -288,6 +312,12 @@ ggbarstats(exam1,
 ```
 
 # Visualising Uncertainty
+
+**Application:** Risk Management and Decision Making. Data is rarely 100% certain. Visualizing uncertainty (e.g., using Error Bars, Confidence Intervals, or RIBBON plots) is applied to:
+
+- **Forecasting:** In financial or weather modeling, showing a "fan chart" or confidence ribbon helps stakeholders understand the range of possible outcomes.
+
+- **Scientific Reporting:** It prevents overconfidence. If two bars on a chart have overlapping confidence intervals, it signals to the viewer that the difference between them might just be due to random noise.
 
 ```{r}
 pacman::p_load(plotly, crosstalk, DT, 
@@ -449,6 +479,12 @@ ggplot(data = exam,
 
 # Building Funnel Plot with R
 
+**Application:** Benchmarking and Performance Monitoring. Funnel plots are specifically designed to compare units (like hospitals, schools, or stores) while accounting for sample size.
+
+- **Healthcare Analytics:** Comparing mortality rates across hospitals. A small clinic with only five patients might have a 0% or 100% mortality rate by chance; the funnel plot adjusts the "control limits" so that smaller entities aren't unfairly penalized for high variance.
+
+- **Public Policy:** Evaluating school performance. It helps authorities distinguish between a school that is truly underperforming and one where the results are simply a byproduct of having a very small student population.
+
 ```{r}
 pacman::p_load(tidyverse, FunnelPlotR, plotly, knitr)
 ```
@@ -566,3 +602,11 @@ fp_ggplotly <- ggplotly(p,
               "y"))
 fp_ggplotly
 ```
+
+|  |  |  |
+|----|----|----|
+| **Concept** | **Primary Goal** | **Typical Use Case** |
+| **Distribution** | Understand Shape | Identifying skewed data or outliers. |
+| **Statistical Dist.** | Prove Significance | Comparing test vs. control groups in A/B testing. |
+| **Uncertainty** | Gauge Reliability | Forecasting revenue ranges for next quarter. |
+| **Funnel Plots** | Fair Benchmarking | Comparing regional sales performance fairly. |

@@ -178,6 +178,7 @@ corrplot(wine.cor)
 ```
 
 ```{r}
+library(corrplot)
 corrplot(wine.cor, 
          method = "ellipse") 
 ```

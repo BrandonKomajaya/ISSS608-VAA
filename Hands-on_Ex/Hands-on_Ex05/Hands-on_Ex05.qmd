@@ -1561,7 +1561,7 @@ library(d3treeR)
 
 ```{r}
 # Make sure you have something like this first:
-tm <- treemap(realis2018_summarise, index=c("Category"), vSize="Value")
+tm <- treemap(realis2018, index=c("Category"), vSize="Value")
 
 # Then run your interactive tree
 d3tree(tm, rootname = "Singapore")

@@ -1529,8 +1529,15 @@ ggplot(data=realis2018_selected,
 #| code-summary: "Show the code"
 
 library(devtools)
+```
+
+```{r}
 install_github("timelyportfolio/d3treeR")
+```
+
+```{r}
 library(d3treeR)
+library(treemap)
 ```
 
 The codes below perform two processes.
@@ -1556,13 +1563,5 @@ tm <- treemap(realis2018_summarised,
 **Note:** `rootname` becomes the title of the plot
 
 ```{r}
-library(d3treeR)
-```
-
-```{r}
-# Make sure you have something like this first:
-tm <- treemap(realis2018, index=c("Category"), vSize="Value")
-
-# Then run your interactive tree
-d3tree(tm, rootname = "Singapore")
+d3tree(tm,rootname = "Singapore" )
 ```

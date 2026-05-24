@@ -241,7 +241,7 @@ Heatmaps visualise data through variations in colouring. When applied to a tabul
 
 In this hands-on exercise, we will gain hands-on experience on using R to plot static and interactive heatmap for visualising and analysing multivariate data.
 
-# 2 Getting Starting
+# 2 Getting Started
 
 ::: panel-tabset
 ## Installing & Launching R Packages

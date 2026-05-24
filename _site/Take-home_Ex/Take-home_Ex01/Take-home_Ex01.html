@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Brandon Komajaya">
+<meta name="dcterms.date" content="2026-05-24">
+
+<title>In-Class Exercise 1 – ISSS608-VAA</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ISSS608-VAA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-hands-on-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Hands-on Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-hands-on-exercise">    
+        <li>
+    <a class="dropdown-item" href="../../Hands-on_Ex/Hands-on_Ex01/Hands-on_Ex01.html">
+ <span class="dropdown-text">Hands-on Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Hands-on_Ex/Hands-on_Ex02/Hands-on_Ex02.html">
+ <span class="dropdown-text">Hands-on Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Hands-on_Ex/Hands-on_Ex03/Hands-on_Ex03.html">
+ <span class="dropdown-text">Hands-on Exercise 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Hands-on_Ex/Hands-on_Ex04/Hands-on_Ex04.html">
+ <span class="dropdown-text">Hands-on Exercise 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Hands-on_Ex/Hands-on_Ex05/Hands-on_Ex05.html">
+ <span class="dropdown-text">Hands-on Exercise 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Hands-on_Ex/Hands-on_Ex04/Hands-on_Ex06.html">
+ <span class="dropdown-text">Hands-on Exercise 6</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-in-class-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">In-Class Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-in-class-exercise">    
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex/Take-home_Ex01/Take-home_Ex01.html">
+ <span class="dropdown-text">In-Class Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex/Take-home_Ex01/Take-home_Ex01_Presentation.html">
+ <span class="dropdown-text">In-Class Exercise 1 Presentation</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview-setup" id="toc-overview-setup" class="nav-link active" data-scroll-target="#overview-setup">1. Overview &amp; Setup</a>
+  <ul>
+  <li><a href="#setting-the-analytical-tools" id="toc-setting-the-analytical-tools" class="nav-link" data-scroll-target="#setting-the-analytical-tools"><strong>1.1 Setting the Analytical Tools</strong></a></li>
+  </ul></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">2. Data Wrangling</a>
+  <ul>
+  <li><a href="#data-quality-checks" id="toc-data-quality-checks" class="nav-link" data-scroll-target="#data-quality-checks">2.1 Data Quality Checks</a></li>
+  <li><a href="#feature-engineering-kpi-creation" id="toc-feature-engineering-kpi-creation" class="nav-link" data-scroll-target="#feature-engineering-kpi-creation">2.2 Feature Engineering &amp; KPI Creation</a></li>
+  <li><a href="#data-cleaning-bucketing" id="toc-data-cleaning-bucketing" class="nav-link" data-scroll-target="#data-cleaning-bucketing">2.3 Data Cleaning &amp; Bucketing</a></li>
+  </ul></li>
+  <li><a href="#exploratory-data-analysis-univariate-techniques" id="toc-exploratory-data-analysis-univariate-techniques" class="nav-link" data-scroll-target="#exploratory-data-analysis-univariate-techniques">3. Exploratory Data Analysis: Univariate Techniques</a>
+  <ul>
+  <li><a href="#general-policy-claim-metrics" id="toc-general-policy-claim-metrics" class="nav-link" data-scroll-target="#general-policy-claim-metrics">3.1 General Policy &amp; Claim Metrics</a></li>
+  <li><a href="#demographic-asset-metrics" id="toc-demographic-asset-metrics" class="nav-link" data-scroll-target="#demographic-asset-metrics">3.2 Demographic &amp; Asset Metrics</a></li>
+  </ul></li>
+  <li><a href="#bivariate-analysis-statistical-validation" id="toc-bivariate-analysis-statistical-validation" class="nav-link" data-scroll-target="#bivariate-analysis-statistical-validation">4. Bivariate Analysis &amp; Statistical Validation</a>
+  <ul>
+  <li><a href="#general-drivers" id="toc-general-drivers" class="nav-link" data-scroll-target="#general-drivers">4.1 General Drivers</a></li>
+  <li><a href="#demographic-drivers" id="toc-demographic-drivers" class="nav-link" data-scroll-target="#demographic-drivers">4.2 Demographic Drivers</a></li>
+  <li><a href="#car-drivers" id="toc-car-drivers" class="nav-link" data-scroll-target="#car-drivers">4.3 Car Drivers</a></li>
+  </ul></li>
+  <li><a href="#key-findings-and-application" id="toc-key-findings-and-application" class="nav-link" data-scroll-target="#key-findings-and-application">5. Key Findings and Application</a>
+  <ul>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">5.1 Key Findings</a></li>
+  <li><a href="#business-applications-recommendations" id="toc-business-applications-recommendations" class="nav-link" data-scroll-target="#business-applications-recommendations">5.2 Business Applications &amp; Recommendations</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">In-Class Exercise 1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Brandon Komajaya </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 24, 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">May 24, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview-setup" class="level3">
+<h3 class="anchored" data-anchor-id="overview-setup">1. Overview &amp; Setup</h3>
+<p><strong>Objective:</strong> To gain deeper insights into data distributions and identify key factors influencing the profitability and volatility of a non-life insurance portfolio.</p>
+<section id="setting-the-analytical-tools" class="level4">
+<h4 class="anchored" data-anchor-id="setting-the-analytical-tools"><strong>1.1 Setting the Analytical Tools</strong></h4>
+<p>We will leverage the <code>tidyverse</code> family for data wrangling, alongside <code>ggplot2</code> and extensions like <code>ggdist</code> (for raincloud plots) and <code>ggpubr</code> (for statistical validation). Here is a breakdown of what each of these R packages does and why they are essential for the visual analytics workflow:</p>
+<ul>
+<li><p><strong>tidyverse:</strong> An ecosystem of interconnected packages designed to efficiently import, clean, manipulate, and wrangle datasets.</p></li>
+<li><p><strong>ggplot2:</strong> A foundational package that provides a powerful, layer-based framework for creating highly customizable data visualizations.</p></li>
+<li><p><strong>ggdist:</strong> An extension that facilitates the visualization of distributions and uncertainty, making it essential for building modern raincloud plots.</p></li>
+<li><p><strong>ggpubr:</strong> A streamlined tool for creating clean, publication-ready charts with integrated statistical annotations.</p></li>
+<li><p><strong>patchwork:</strong> A layout manager that drastically simplifies the process of combining multiple separate plots into a single, cohesive graphic.</p></li>
+<li><p><strong>skimr:</strong> A lightweight package that generates quick, comprehensive exploratory data summaries complete with inline sparkline histograms.</p></li>
+<li><p><strong>ggridges:</strong> An extension used to create ridgeline plots, which are highly effective for comparing overlapping density curves across multiple categories.</p></li>
+<li><p><strong>ggstatsplot:</strong> A powerful package that automatically executes statistical tests and seamlessly embeds the results directly into the visual output.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install packages if necessary</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, ggplot2, ggdist, ggpubr, patchwork, skimr, ggridges, ggstatsplot, dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="data-wrangling" class="level3">
+<h3 class="anchored" data-anchor-id="data-wrangling">2. Data Wrangling</h3>
+<p>Effective visual analytics requires rigorous data preparation. In this phase, we import the semicolon-delimited dataset and utilize the <code>janitor</code> package to standardize column names.</p>
+<p>To meet the analytical objectives regarding profitability and volatility, several new variables are derived:</p>
+<ul>
+<li><p><strong>Financial Metrics:</strong> <code>loss_ratio</code> (Total Incurred / Total Premium) is calculated to measure profitability, and <code>has_claim</code> is derived to measure claim occurrence (volatility).</p></li>
+<li><p><strong>Demographic Groupings:</strong> Continuous variables such as <code>driver_age</code> and <code>vehicle_age</code> are binned into categorical groups (e.g., “Youth”, “Adult”) to facilitate categorical bivariate analysis and statistical testing.</p></li>
+</ul>
+<p>Records with zero or negative premiums and exposures are filtered out to prevent infinite values or distorted financial ratios.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Load the data specifying the semicolon delimiter</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>insurance_data <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"data/Dataset of motor insurance portfolio.csv"</span>, <span class="at">delim =</span> <span class="st">";"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Let's do a quick sanity check to ensure columns separated correctly</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># If this prints one giant string, the delimiter didn't work. It should print 47 distinct names.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">colnames</span>(insurance_data))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "insured_id"                  "year"                       
+ [3] "policy_type"                 "policy_status"              
+ [5] "business_type"               "payment_frequency"          
+ [7] "bonus_score"                 "driver_age"                 
+ [9] "vehicle_age"                 "age_driving_licence"        
+[11] "fuel_type"                   "vehicle_value"              
+[13] "seats"                       "power_to_weight_ratio"      
+[15] "vehicle_brand"               "municipality_type"          
+[17] "circulation_area"            "total_premium"              
+[19] "liability_premium"           "property_damage_premium"    
+[21] "theft_premium"               "fire_premium"               
+[23] "glass_premium"               "legal_protection_premium"   
+[25] "occupants_premium"           "total_claims"               
+[27] "liability_claims"            "liability_property_claims"  
+[29] "liability_injury_claims"     "property_claims"            
+[31] "theft_claims"                "fire_claims"                
+[33] "glass_claims"                "legal_protection_claims"    
+[35] "occupants_claims"            "total_incurred"             
+[37] "liability_incurred"          "liability_property_incurred"
+[39] "liability_injury_incurred"   "property_incurred"          
+[41] "theft_incurred"              "fire_incurred"              
+[43] "glass_incurred"              "legal_protection_incurred"  
+[45] "occupants_incurred"          "total_exposure"             
+[47] "liability_exposure"         </code></pre>
+</div>
+</div>
+<section id="data-quality-checks" class="level4">
+<h4 class="anchored" data-anchor-id="data-quality-checks">2.1 Data Quality Checks</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Missing Values</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>total_missing <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(insurance_data))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>missing_by_col <span class="ot">&lt;-</span> <span class="fu">colSums</span>(<span class="fu">is.na</span>(insurance_data))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>cols_with_missing <span class="ot">&lt;-</span> missing_by_col[missing_by_col <span class="sc">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Total Missing Values:"</span>, total_missing))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Total Missing Values: 1804"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Missing Values by Column:"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Missing Values by Column:"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cols_with_missing)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        vehicle_age age_driving_licence           fuel_type       vehicle_value 
+                  2                   2                1287                 513 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>insurance_data <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Data is removed because of relatively small size of missing values.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Identical (Duplicate) Rows</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>total_duplicates <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">duplicated</span>(insurance_data))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Total Identical Rows:"</span>, total_duplicates))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Total Identical Rows: 0"</code></pre>
+</div>
+</div>
+<p>No identical rows so no action needed.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Outliers (Using the IQR Method for all numerical columns)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only numeric columns</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>numeric_cols <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to count outliers based on 1.5 * IQR</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>count_outliers <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  iqr <span class="ot">&lt;-</span> q3 <span class="sc">-</span> q1</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  lower_bound <span class="ot">&lt;-</span> q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  upper_bound <span class="ot">&lt;-</span> q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(x <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> x <span class="sc">&gt;</span> upper_bound, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function to all numeric columns and sort the results</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>outlier_counts <span class="ot">&lt;-</span> <span class="fu">sapply</span>(numeric_cols, count_outliers)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>outliers_sorted <span class="ot">&lt;-</span> <span class="fu">sort</span>(outlier_counts[outlier_counts <span class="sc">&gt;</span> <span class="dv">0</span>], <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Top 5 Columns with the Most Outliers:"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Top 5 Columns with the Most Outliers:"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(outliers_sorted, <span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>property_damage_premium                   seats            total_claims 
+                  53195                   53104                   50476 
+         total_incurred        liability_claims 
+                  41978                   30541 </code></pre>
+</div>
+</div>
+<p>Data is kept because this is a sizeable amount of outliers</p>
+</section>
+<section id="feature-engineering-kpi-creation" class="level4">
+<h4 class="anchored" data-anchor-id="feature-engineering-kpi-creation">2.2 Feature Engineering &amp; KPI Creation</h4>
+<p>This chunk focuses on calculating core business metrics (Key Performance Indicators) for each individual insurance policy.</p>
+<ul>
+<li><p><strong>Mathematical Derivations:</strong> It uses <code>mutate()</code> to create new columns based on the raw financial data, calculating metrics like <code>loss_ratio</code> (profitability), <code>claim_frequency</code> (risk occurrence), <code>claim_severity</code> (average cost per accident), and <code>premium_rate</code> (annualized revenue).</p></li>
+<li><p><strong>Categorical Flags:</strong> It converts the raw <code>policy_status</code> character column into a clean, two-level factor variable (<code>is_cancelled</code>: “Active” vs.&nbsp;“Cancelled”) to make grouping and charting easier later.</p></li>
+<li><p><em>Note: There is a redundant block at the bottom of this chunk that recalculates the exact same KPI columns a second time.</em></p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># POLICY-LEVEL KPI VARIABLES FOR BIVARIATE ANALYSIS</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ==============================================================================</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>insurance_data <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Profitability: Loss Ratio (Total Incurred / Total Premium)</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">loss_ratio =</span> total_incurred <span class="sc">/</span> total_premium,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Volatility (Frequency): Claims per year of exposure</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Normalizes claim counts for short-term vs long-term policies</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">claim_frequency =</span> total_claims <span class="sc">/</span> total_exposure,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Volatility (Severity): Average cost per individual claim</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If no claims were made, severity is 0</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">claim_severity =</span> <span class="fu">if_else</span>(total_claims <span class="sc">&gt;</span> <span class="dv">0</span>, total_incurred <span class="sc">/</span> total_claims, <span class="dv">0</span>),</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4. Revenue: Annualized Premium Rate</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculates what the premium would be for a full 1.0 year of exposure</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">premium_rate =</span> total_premium <span class="sc">/</span> total_exposure,</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 5. Business Health: Cancellation Flag</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Converts policy_status into a clear categorical variable for grouping</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_cancelled =</span> <span class="fu">factor</span>(</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>      <span class="fu">if_else</span>(policy_status <span class="sc">==</span> <span class="st">"C"</span>, <span class="st">"Cancelled"</span>, <span class="st">"Active"</span>),</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Active"</span>, <span class="st">"Cancelled"</span>)</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-cleaning-bucketing" class="level4">
+<h4 class="anchored" data-anchor-id="data-cleaning-bucketing">2.3 Data Cleaning &amp; Bucketing</h4>
+<p>This chunk is focused on the initial preparation and transformation of the raw dataset (<code>insurance_data</code>) into the working dataset (<code>insurance_data</code>).</p>
+<ul>
+<li><p><strong>Sanitization:</strong> It uses <code>janitor::clean_names()</code> to standardize all column headers and <code>drop_na()</code>/<code>filter()</code> to remove incomplete records or invalid rows (e.g., ensuring premium and exposure are greater than 0 to prevent division-by-zero errors).</p></li>
+<li><p><strong>Binning Continuous Variables:</strong> It uses <code>case_when()</code> to group continuous numerical data into discrete categories. For example, it buckets exact vehicle ages into “New”, “Mid”, and “Old”, and driver ages into “Youth”, “Adult”, “Middle-Age”, and “Senior”.</p></li>
+<li><p><strong>Factor Ordering:</strong> It finishes by converting those new text buckets into ordered factors, ensuring that when you plot them later, they appear in a logical progression (e.g., Youth -&gt; Adult -&gt; Middle-Age -&gt; Senior) rather than alphabetical order.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Proceed with the cleaning</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>insurance_data <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(fuel_type) <span class="sc">%&gt;%</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Now R will be able to find total_premium and total_exposure</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total_premium <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> total_exposure <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">loss_ratio =</span> total_incurred <span class="sc">/</span> total_premium,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">profitable =</span> <span class="fu">if_else</span>(loss_ratio <span class="sc">&lt;</span> <span class="dv">1</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>),</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">has_claim =</span> <span class="fu">if_else</span>(total_claims <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>),</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">vehicle_age_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>      vehicle_age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"New (0-2)"</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>      vehicle_age <span class="sc">&lt;=</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">"Mid (3-7)"</span>,</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Old (8+)"</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">driver_age_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>      driver_age <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"Youth (&lt;25)"</span>,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>      driver_age <span class="sc">&lt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="st">"Adult (25-40)"</span>,</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>      driver_age <span class="sc">&lt;=</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"Middle-Age (41-60)"</span>,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Senior (60+)"</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">vehicle_age_group =</span> <span class="fu">factor</span>(vehicle_age_group, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"New (0-2)"</span>, <span class="st">"Mid (3-7)"</span>, <span class="st">"Old (8+)"</span>)),</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">driver_age_group =</span> <span class="fu">factor</span>(driver_age_group, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Youth (&lt;25)"</span>, <span class="st">"Adult (25-40)"</span>, <span class="st">"Middle-Age (41-60)"</span>, <span class="st">"Senior (60+)"</span>))</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Printing the bins would look like this.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Breakdown by Vehicle Age Group:"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Breakdown by Vehicle Age Group:"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>insurance_data <span class="sc">%&gt;%</span> <span class="fu">count</span>(vehicle_age_group) <span class="sc">%&gt;%</span> <span class="fu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  vehicle_age_group      n
+  &lt;fct&gt;              &lt;int&gt;
+1 New (0-2)           1566
+2 Mid (3-7)          13011
+3 Old (8+)          337712</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Breakdown by Driver Age Group:"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Breakdown by Driver Age Group:"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>insurance_data <span class="sc">%&gt;%</span> <span class="fu">count</span>(driver_age_group) <span class="sc">%&gt;%</span> <span class="fu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  driver_age_group        n
+  &lt;fct&gt;               &lt;int&gt;
+1 Youth (&lt;25)          1072
+2 Adult (25-40)      102252
+3 Middle-Age (41-60) 177692
+4 Senior (60+)        71273</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Breakdown by Fuel Type:"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Breakdown by Fuel Type:"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>insurance_data <span class="sc">%&gt;%</span> <span class="fu">count</span>(fuel_type) <span class="sc">%&gt;%</span> <span class="fu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  fuel_type      n
+  &lt;chr&gt;      &lt;int&gt;
+1 D         226105
+2 G         126184</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="exploratory-data-analysis-univariate-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-data-analysis-univariate-techniques">3. Exploratory Data Analysis: Univariate Techniques</h3>
+<p>6 variables are selected as they seem to intuitively have the most importance for insurance data. For the purposes of this initial analysis a histogram will be used.</p>
+<ul>
+<li><strong>Justification:</strong> Histograms are the optimal choice for visualizing the shape, spread, concentration, and central tendency of continuous data. They immediately reveal whether variables follow a normal, bell-shaped distribution or exhibit severe skewness. Understanding this shape is a mandatory prerequisite because it dictates which statistical tests (parametric vs.&nbsp;non-parametric) are appropriate for subsequent analysis.</li>
+</ul>
+<p>Moreoever, additional features were added:</p>
+<ul>
+<li><p><strong>Handling Extreme Outliers (Logarithmic Scale):</strong> The “Vehicle Value” chart specifically employs a logarithmic (log) scale on the x-axis. Financial and asset metrics typically suffer from severe right-skewness due to a small number of extremely high-value outliers (e.g., luxury or commercial vehicles). Applying a log scale mathematically normalizes the distribution, compressing the long tail so the central mass of the data becomes visible and analyzable.</p></li>
+<li><p><strong>Anchoring Central Tendency (Median Lines):</strong> Vertical dashed lines marking the exact median are overlaid on each chart. In the presence of skewed data, the mean (average) becomes distorted by outliers. The median provides a highly robust, outlier-resistant anchor that accurately represents the “typical” driver age or vehicle value within the portfolio.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Total Premium (Log Scale)</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>med_prem <span class="ot">&lt;-</span> <span class="fu">median</span>(insurance_data<span class="sc">$</span>total_premium, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>p_prem <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(insurance_data, <span class="fu">aes</span>(<span class="at">x =</span> total_premium)) <span class="sc">+</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> med_prem, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> med_prem, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"Median: "</span>, scales<span class="sc">::</span><span class="fu">dollar</span>(med_prem, <span class="at">prefix=</span><span class="st">"€"</span>)), </span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"1. Total Premium"</span>, <span class="at">x =</span> <span class="st">"Total Premium (€, Log Scale)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Total Incurred (Log Scale, Filtered &gt; 0)</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>inc_data <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(total_incurred <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>med_inc <span class="ot">&lt;-</span> <span class="fu">median</span>(inc_data<span class="sc">$</span>total_incurred, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>p_inc <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(inc_data, <span class="fu">aes</span>(<span class="at">x =</span> total_incurred)) <span class="sc">+</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> med_inc, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> med_inc, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"Median: "</span>, scales<span class="sc">::</span><span class="fu">dollar</span>(med_inc, <span class="at">prefix=</span><span class="st">"€"</span>)), </span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2. Total Incurred (&gt; 0)"</span>, <span class="at">x =</span> <span class="st">"Total Incurred (€, Log Scale)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Total Claims (Discrete Binwidth)</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>med_clm <span class="ot">&lt;-</span> <span class="fu">median</span>(insurance_data<span class="sc">$</span>total_claims, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>p_clm <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(insurance_data, <span class="fu">aes</span>(<span class="at">x =</span> total_claims)) <span class="sc">+</span></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> med_clm, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> med_clm, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"Median: "</span>, med_clm), </span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"3. Total Claims"</span>, <span class="at">x =</span> <span class="st">"Number of Claims"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Driver Age</span></span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>med_d_age <span class="ot">&lt;-</span> <span class="fu">median</span>(insurance_data<span class="sc">$</span>driver_age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a>p_d_age <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(insurance_data, <span class="fu">aes</span>(<span class="at">x =</span> driver_age)) <span class="sc">+</span></span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> med_d_age, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> med_d_age, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"Median: "</span>, med_d_age), </span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"4. Driver Age"</span>, <span class="at">x =</span> <span class="st">"Age"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Vehicle Value (Log Scale)</span></span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a>med_v_val <span class="ot">&lt;-</span> <span class="fu">median</span>(insurance_data<span class="sc">$</span>vehicle_value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a>p_v_val <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(insurance_data, <span class="fu">aes</span>(<span class="at">x =</span> vehicle_value)) <span class="sc">+</span></span>
+<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> med_v_val, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-49"><a href="#cb32-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> med_v_val, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"Median: "</span>, scales<span class="sc">::</span><span class="fu">dollar</span>(med_v_val, <span class="at">prefix=</span><span class="st">"€"</span>)), </span>
+<span id="cb32-50"><a href="#cb32-50" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb32-51"><a href="#cb32-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb32-52"><a href="#cb32-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"5. Vehicle Value"</span>, <span class="at">x =</span> <span class="st">"Vehicle Value (€, Log Scale)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb32-53"><a href="#cb32-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb32-54"><a href="#cb32-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-55"><a href="#cb32-55" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Vehicle Age</span></span>
+<span id="cb32-56"><a href="#cb32-56" aria-hidden="true" tabindex="-1"></a>med_v_age <span class="ot">&lt;-</span> <span class="fu">median</span>(insurance_data<span class="sc">$</span>vehicle_age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-57"><a href="#cb32-57" aria-hidden="true" tabindex="-1"></a>p_v_age <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(insurance_data, <span class="fu">aes</span>(<span class="at">x =</span> vehicle_age)) <span class="sc">+</span></span>
+<span id="cb32-58"><a href="#cb32-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-59"><a href="#cb32-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> med_v_age, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-60"><a href="#cb32-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> med_v_age, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"Median: "</span>, med_v_age), </span>
+<span id="cb32-61"><a href="#cb32-61" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb32-62"><a href="#cb32-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"6. Vehicle Age"</span>, <span class="at">x =</span> <span class="st">"Vehicle Age (Years)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb32-63"><a href="#cb32-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>(p_prem <span class="sc">|</span> p_inc <span class="sc">/</span> p_clm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex01_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="general-policy-claim-metrics" class="level4">
+<h4 class="anchored" data-anchor-id="general-policy-claim-metrics">3.1 General Policy &amp; Claim Metrics</h4>
+<p><strong>1. Total Premium</strong></p>
+<ul>
+<li><p>The distribution is highly concentrated, with the bulk of policies priced in the middle of the log scale (visually between €100 and €1,000).</p></li>
+<li><p>A long left tail indicates a small but noticeable segment of micro-premiums or partial-year policies.</p></li>
+</ul>
+<p><strong>2. Total Incurred (&gt; 0)</strong></p>
+<ul>
+<li><p>Claim severities follow a remarkably tight, highly peaked (leptokurtic) distribution when plotted on a log scale.</p></li>
+<li><p>The vast majority of strictly positive claims cluster closely around a single central payout magnitude, showing minimal spread in typical accident costs.</p></li>
+</ul>
+<p><strong>3. Total Claims</strong></p>
+<ul>
+<li><p>The portfolio exhibits extreme zero-inflation, with the overwhelming majority of policyholders recording exactly 0 claims.</p></li>
+<li><p>Frequency drops off sharply and exponentially after 1 claim, confirming a generally safe or low-incident customer base.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(p_d_age <span class="sc">|</span> p_v_val <span class="sc">/</span> p_v_age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex01_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="demographic-asset-metrics" class="level4">
+<h4 class="anchored" data-anchor-id="demographic-asset-metrics">3.2 Demographic &amp; Asset Metrics</h4>
+<p><strong>4. Driver Age</strong></p>
+<ul>
+<li><p>The portfolio captures a mature, established demographic with a median driver age of 48 years.</p></li>
+<li><p>The distribution remains fairly stable and widespread across the primary adult driving years (30 to 65) before dropping off sharply after age 70.</p></li>
+</ul>
+<p><strong>5. Vehicle Value</strong></p>
+<ul>
+<li><p>Asset values display a near-perfect log-normal distribution, appearing as a symmetrical bell curve on the log scale.</p></li>
+<li><p>There is a very strong central tendency anchored precisely around the median value of €24,687.</p></li>
+</ul>
+<p><strong>6. Vehicle Age</strong></p>
+<ul>
+<li><p>The insured asset pool is notably mature, with a high median vehicle age of 25 years.</p></li>
+<li><p>The distribution shows a bimodal shape (two distinct peaks), suggesting the portfolio might contain two different classes of assets, such as standard older commuter cars alongside a distinct group of vintage or classic vehicles.</p></li>
+</ul>
+</section>
+</section>
+<section id="bivariate-analysis-statistical-validation" class="level3">
+<h3 class="anchored" data-anchor-id="bivariate-analysis-statistical-validation">4. Bivariate Analysis &amp; Statistical Validation</h3>
+<section id="general-drivers" class="level4">
+<h4 class="anchored" data-anchor-id="general-drivers">4.1 General Drivers</h4>
+<ul>
+<li><p><strong>Loss Ratio by Municipality:</strong> Tests whether the overall profitability of policies changes depending on where the customer lives. This is important to know so you can adjust regional pricing—if City drivers cost the company more than Rural drivers, their premiums need to reflect that.</p></li>
+<li><p><strong>Claim Frequency by Policy Type:</strong> Tests how often customers file claims based on the type of coverage they bought. This is important for identifying product exploitation; if a specific policy type has an abnormally high frequency, the terms, conditions, or deductibles may need to be rewritten.</p></li>
+<li><p><strong>Retention by Business Type:</strong> Tests whether a policy is more likely to be cancelled if it is New Business versus a Renewal. This is important for customer success teams to know exactly where to focus their retention campaigns and loyalty discounts.</p></li>
+<li><p><strong>Premium Rate by Municipality:</strong> Tests if the baseline price charged to customers differs significantly by region. This is important to ensure the pricing engine is functioning correctly and to understand how competitive your rates are in different geographic markets.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A. Loss Ratio vs. Municipality Type (ANOVA)</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>p_val_g1 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(loss_ratio <span class="sc">~</span> municipality_type, <span class="at">data =</span> <span class="fu">filter</span>(insurance_data, loss_ratio <span class="sc">&lt;</span> <span class="dv">10</span>)))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>plot_g1 <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(municipality_type) <span class="sc">%&gt;%</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate aggregate loss ratio: Sum of all incurred / Sum of all premium</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">agg_lr =</span> <span class="fu">sum</span>(total_incurred, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(total_premium, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> municipality_type, <span class="at">y =</span> agg_lr, <span class="at">fill =</span> municipality_type)) <span class="sc">+</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(agg_lr, <span class="at">accuracy =</span> <span class="fl">0.1</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent, <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Aggregate Loss Ratio by Municipality"</span>, <span class="at">subtitle =</span> <span class="st">"(Total Incurred / Total Premium)"</span>, <span class="at">y =</span> <span class="st">"Loss Ratio"</span>, <span class="at">x =</span> <span class="st">"Municipality Type"</span>) <span class="sc">+</span> </span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co"># B. Claim Frequency vs. Policy Type (ANOVA)</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>p_val_g2 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(claim_frequency <span class="sc">~</span> policy_type, <span class="at">data =</span> insurance_data))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>plot_g2 <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(policy_type) <span class="sc">%&gt;%</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate aggregate frequency: Sum of all claims / Sum of all exposure years</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_freq =</span> <span class="fu">sum</span>(total_claims, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(total_exposure, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> policy_type, <span class="at">y =</span> avg_freq, <span class="at">fill =</span> policy_type)) <span class="sc">+</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">number</span>(avg_freq, <span class="at">accuracy =</span> <span class="fl">0.001</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Pastel1"</span>) <span class="sc">+</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Average Claim Frequency by Policy Type"</span>, <span class="at">subtitle =</span> <span class="st">"(Total Claims / Total Exposure)"</span>, <span class="at">y =</span> <span class="st">"Average Claims per Year"</span>, <span class="at">x =</span> <span class="st">"Policy Type"</span>) <span class="sc">+</span> </span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a><span class="co"># C. Cancellation vs. Business Type (Chi-Square)</span></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>p_val_g3 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">chisq.test</span>(<span class="fu">table</span>(insurance_data<span class="sc">$</span>is_cancelled, insurance_data<span class="sc">$</span>business_type))<span class="sc">$</span>p.value, <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>plot_g3 <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pre-calculate proportions to make labeling accurate and centered</span></span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(business_type, is_cancelled) <span class="sc">%&gt;%</span></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(business_type) <span class="sc">%&gt;%</span></span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> business_type, <span class="at">y =</span> prop, <span class="at">fill =</span> is_cancelled)) <span class="sc">+</span></span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(prop, <span class="at">accuracy =</span> <span class="fl">0.1</span>)), <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span> </span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Retention by Business Type"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Chi-Square p-value:"</span>, p_val_g3), <span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">x =</span> <span class="st">"Business Type"</span>, <span class="at">fill=</span><span class="st">"Status"</span>) <span class="sc">+</span> </span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a><span class="co"># D. Premium Rate vs. Municipality Type (ANOVA)</span></span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>p_val_g4 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(premium_rate <span class="sc">~</span> municipality_type, <span class="at">data =</span> insurance_data))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>plot_g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(insurance_data, <span class="fu">aes</span>(<span class="at">x =</span> municipality_type, <span class="at">y =</span> premium_rate, <span class="at">fill =</span> municipality_type)) <span class="sc">+</span></span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">outlier.alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> median, <span class="at">geom =</span> <span class="st">"label"</span>, <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(<span class="fu">after_stat</span>(y), <span class="at">prefix=</span><span class="st">"€"</span>)), <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set3"</span>) <span class="sc">+</span></span>
+<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Premium Rate by Municipality"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ANOVA p-value:"</span>, p_val_g4), <span class="at">y =</span> <span class="st">"Annualized Premium (€)"</span>, <span class="at">x =</span> <span class="st">"Municipality"</span>) <span class="sc">+</span> </span>
+<span id="cb35-52"><a href="#cb35-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Bar Charts (Visualization 1, 2 &amp; 3)</strong></p>
+<ul>
+<li>Explanation: This combined visual analysis utilizes standard and 100% stacked bar charts to evaluate key portfolio metrics across distinct categorical groupings. The charts display the aggregate loss ratio across three municipality types (C, I, and IS), the average claim frequency per exposure year across various policy types (CC, COMP_E, COMP_N, TP, TPG), and the proportion of active versus cancelled policies between two business types (“NB” and “P”). A Chi-Square p-value is included in the retention analysis to indicate the statistical significance of the variance.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Justification: Bar charts are the optimal methodological choice for presenting and comparing aggregated data and part-to-whole relationships across discrete categories. The standard vertical bar charts allow for rapid visual assessment of profitability and risk, clearly demonstrating that loss ratios remain stable across municipalities (ranging from 69.9% to 71.1%) while starkly highlighting the abnormally high claim frequency anomaly of the “COMP_N” policy (1.043 claims per year) against the rest of the portfolio. For the retention analysis, the 100% stacked bar chart is the standard method; by forcing both bars to a uniform height representing exactly 100%, the visual perfectly contrasts the relative cancellation rates (7.9% for NB versus 17.3% for P) without being distorted by the absolute total volume of policies existing within each business group.</li>
+</ul>
+<p><strong>Boxplots (Visualization 4)</strong></p>
+<ul>
+<li><p><strong>Explanation:</strong> This visual displays the distribution of annualized premium amounts charged to customers across three municipality types. It includes exact median values overlaid on the boxes and an ANOVA p-value to test for significance.</p></li>
+<li><p><strong>Justification:</strong> Boxplots are strictly utilized for displaying the distribution of a continuous variable (premiums) split by categorical groups (municipalities). Rather than just showing a single average, a boxplot visualizes the entire spread of the data. It highlights the interquartile range (where the bulk of the premiums lie), the median (the most typical premium), and the massive upper-tail outliers (extremely expensive policies). This provides a complete, multidimensional picture of pricing structures that a simple bar chart of averages would completely conceal.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the compiled plots (if using patchwork to show them together)</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>(plot_g1 <span class="sc">|</span> plot_g2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex01_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>1. Aggregate Loss Ratio by Municipality</strong></p>
+<ul>
+<li><p>Aggregate loss ratios are remarkably consistent across all regions, resting tightly between 69.9% and 71.0%.</p></li>
+<li><p>This indicates that geography (at the municipality level) is not a major differentiating factor for overall portfolio profitability, suggesting regional pricing is currently well-balanced against regional risks.</p></li>
+</ul>
+<p><strong>2. Average Claim Frequency by Policy Type</strong></p>
+<ul>
+<li><p>There is a massive risk concentration within the <strong>COMP_N</strong> policy type, which experiences an average of over 1 full claim per exposure year (1.043).</p></li>
+<li><p>This frequency is extraordinarily high compared to the safest policy type, <strong>TP</strong>, which experiences only 0.133 claims per year, indicating a severe utilization or moral hazard issue specifically within the COMP_N segment.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>(plot_g3 <span class="sc">|</span> plot_g4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex01_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>3. Retention by Business Type</strong></p>
+<ul>
+<li><p>The portfolio faces a significant churn issue within the <strong>P</strong> business type, which suffers from a 17.3% cancellation rate.</p></li>
+<li><p>This cancellation rate is more than double that of the <strong>NB</strong> business type (7.9%), pinpointing exactly where retention efforts need to be focused.</p></li>
+</ul>
+<p><strong>4. Premium Rate by Municipality</strong></p>
+<ul>
+<li><p>Median annualized premium rates are fairly comparable across regions, though municipality <strong>IS</strong> is visibly the most affordable at €303.61.</p></li>
+<li><p>Despite the relatively low median premiums (between €300 and €361), all municipalities exhibit a heavy upper tail of extreme high-premium outliers stretching well beyond €4,000, particularly in regions <strong>C</strong> and <strong>I</strong>.</p></li>
+</ul>
+</section>
+<section id="demographic-drivers" class="level4">
+<h4 class="anchored" data-anchor-id="demographic-drivers">4.2 Demographic Drivers</h4>
+<ul>
+<li><p><strong>Loss Ratio by Driver Age:</strong> Tests which age groups are actually making the company money versus losing money. This is important because while young drivers usually have more accidents, their premiums might be so high that they are still the most profitable segment.</p></li>
+<li><p><strong>Claim Frequency by Driver Age:</strong> Tests how often different age groups get into accidents or file claims. This is important for understanding behavioral risk; it proves whether inexperienced youth drivers actually pose a higher frequency risk than mature drivers.</p></li>
+<li><p><strong>Severity by Driver Age:</strong> Tests how expensive the typical accident is across different age groups. This is important for financial reserving; for example, accidents involving seniors might be less frequent but result in much higher payouts due to medical complexities or driving more expensive vehicles.</p></li>
+<li><p><strong>Driver Age by Cancellation Status:</strong> Tests if a customer’s age impacts their likelihood to cancel their policy. This is important for life-cycle marketing, helping the business understand if younger, less financially established customers are more prone to shopping around for cheaper rates.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A. Aggregate Loss Ratio by Driver Age Group (Bar Chart)</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>p_val_d1 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(loss_ratio <span class="sc">~</span> driver_age_group, <span class="at">data =</span> <span class="fu">filter</span>(insurance_data, total_claims <span class="sc">&gt;</span> <span class="dv">0</span>, loss_ratio <span class="sc">&lt;</span> <span class="dv">10</span>)))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>plot_d1 <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(driver_age_group) <span class="sc">%&gt;%</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">agg_lr =</span> <span class="fu">sum</span>(total_incurred, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(total_premium, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">.groups=</span><span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> driver_age_group, <span class="at">y =</span> agg_lr, <span class="at">fill =</span> driver_age_group)) <span class="sc">+</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(agg_lr, <span class="at">accuracy =</span> <span class="fl">0.1</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent, <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Aggregate Loss Ratio by Driver Age"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ANOVA p-value:"</span>, p_val_d1), <span class="at">y =</span> <span class="st">"Loss Ratio"</span>, <span class="at">x =</span> <span class="st">"Driver Age Group"</span>) <span class="sc">+</span> </span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">15</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="co"># B. Average Claim Frequency by Driver Age Group (Bar Chart)</span></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>p_val_d2 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(claim_frequency <span class="sc">~</span> driver_age_group, <span class="at">data =</span> insurance_data))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>plot_d2 <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(driver_age_group) <span class="sc">%&gt;%</span></span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_freq =</span> <span class="fu">sum</span>(total_claims, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(total_exposure, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">.groups=</span><span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> driver_age_group, <span class="at">y =</span> avg_freq, <span class="at">fill =</span> driver_age_group)) <span class="sc">+</span></span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">number</span>(avg_freq, <span class="at">accuracy =</span> <span class="fl">0.001</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Blues"</span>) <span class="sc">+</span></span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Claim Frequency by Driver Age"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ANOVA p-value:"</span>, p_val_d2), <span class="at">y =</span> <span class="st">"Claims per Exposure Year"</span>, <span class="at">x =</span> <span class="st">"Driver Age Group"</span>) <span class="sc">+</span> </span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">15</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
+<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a><span class="co"># C. Claim Severity by Driver Age Group (Boxplot - Claimants Only)</span></span>
+<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>p_val_d3 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(claim_severity <span class="sc">~</span> driver_age_group, <span class="at">data =</span> <span class="fu">filter</span>(insurance_data, total_claims <span class="sc">&gt;</span> <span class="dv">0</span>)))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>plot_d3 <span class="ot">&lt;-</span> <span class="fu">filter</span>(insurance_data, total_claims <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> driver_age_group, <span class="at">y =</span> claim_severity, <span class="at">fill =</span> driver_age_group)) <span class="sc">+</span></span>
+<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">outlier.alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> median, <span class="at">geom =</span> <span class="st">"label"</span>, <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(<span class="fu">after_stat</span>(y), <span class="at">prefix=</span><span class="st">"€"</span>)), <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Severity by Driver Age (&gt;0 Claims)"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ANOVA p-value:"</span>, p_val_d3), <span class="at">y =</span> <span class="st">"Severity (€, log scale)"</span>, <span class="at">x =</span> <span class="st">"Driver Age Group"</span>) <span class="sc">+</span> </span>
+<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">15</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
+<span id="cb38-37"><a href="#cb38-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-38"><a href="#cb38-38" aria-hidden="true" tabindex="-1"></a><span class="co"># D. Driver Age vs Cancellation (Boxplot)</span></span>
+<span id="cb38-39"><a href="#cb38-39" aria-hidden="true" tabindex="-1"></a>glm_d4 <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">glm</span>(<span class="fu">I</span>(is_cancelled <span class="sc">==</span> <span class="st">"Cancelled"</span>) <span class="sc">~</span> driver_age, <span class="at">family =</span> <span class="st">"binomial"</span>, <span class="at">data =</span> insurance_data))</span>
+<span id="cb38-40"><a href="#cb38-40" aria-hidden="true" tabindex="-1"></a>p_val_d4 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(glm_d4<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">4</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb38-41"><a href="#cb38-41" aria-hidden="true" tabindex="-1"></a>plot_d4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(insurance_data, <span class="fu">aes</span>(<span class="at">x =</span> is_cancelled, <span class="at">y =</span> driver_age, <span class="at">fill =</span> is_cancelled)) <span class="sc">+</span></span>
+<span id="cb38-42"><a href="#cb38-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb38-43"><a href="#cb38-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> median, <span class="at">geom =</span> <span class="st">"label"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(<span class="fu">after_stat</span>(y), <span class="dv">1</span>)), <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb38-44"><a href="#cb38-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Active"</span> <span class="ot">=</span> <span class="st">"#2ecc71"</span>, <span class="st">"Cancelled"</span> <span class="ot">=</span> <span class="st">"#e74c3c"</span>)) <span class="sc">+</span></span>
+<span id="cb38-45"><a href="#cb38-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Driver Age by Cancellation Status"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Logistic Reg p-value:"</span>, p_val_d4), <span class="at">y =</span> <span class="st">"Driver Age"</span>, <span class="at">x =</span> <span class="st">"Status"</span>) <span class="sc">+</span> </span>
+<span id="cb38-46"><a href="#cb38-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Bar Charts (Visualizations 1 and 2)</strong></p>
+<p><strong>Explanation</strong> This combined visual analysis evaluates financial risk across four ordinal driver age groups: Youth (&lt;25), Adult (25-40), Middle-Age (41-60), and Senior (60+). It contrasts the aggregate loss ratio using a standard bar chart against the distribution of claim severities (for drivers with &gt;0 claims) using a log-scaled boxplot. Statistical tests (ANOVA p-values &lt; 0.001) confirm that the variances between the age cohorts are statistically significant for both metrics.</p>
+<p><strong>Justification</strong> Pairing a standard vertical bar chart with a log-scaled boxplot provides a comprehensive view of overall profitability versus isolated payout risk. The bar chart effectively compares aggregated metrics across defined buckets, immediately highlighting a critical business anomaly: the youngest drivers (Youth) are the most profitable segment (63.3% loss ratio), while Adults are the least profitable (73.6%). Concurrently, the boxplot is mandatory for evaluating the claim severity data because insurance payouts are extremely right-skewed. By utilizing a log scale, massive upper-tail outliers are mathematically compressed, allowing the true central tendency to remain visible. This isolates a contrasting “U-shaped” severity curve, demonstrating that despite the overall profitability of the Youth segment, both the youngest (€713.75) and oldest (€714.47) drivers have the most expensive median accidents.</p>
+<p><strong>Boxplots (Visualizations 3 and 4)</strong></p>
+<p><strong>Explanation</strong> This combined visual analysis utilizes boxplots to examine how driver age influences both the financial magnitude of claims and the likelihood of policy retention. The first visualization plots the distribution of claim severity across four discrete age cohorts using a logarithmic y-axis. The second plots the continuous variable of exact driver age against the binary categorical variable of policy status (Active versus Cancelled). Both patterns are validated by highly significant statistical tests (ANOVA and Logistic Regression p-values &lt; 0.001).</p>
+<p><strong>Justification</strong> Boxplots are the optimal methodological choice for both assessments because they effectively display the entire spread, interquartile ranges, and median values of continuous data, which would otherwise be distorted by simple averages. For claim severity, a log-scaled boxplot is strictly necessary to compress extreme financial outliers, successfully revealing a “U-shaped” curve where Youth (€713.75) and Seniors (€714.47) incur the highest median accident costs. When evaluating retention, the boxplot is the standard method for visualizing how a continuous independent variable (age) impacts a categorical dependent variable (status). It demonstrates the entire spread of the customer base, revealing that while the median ages are close (48 vs.&nbsp;46), the entire interquartile range of the “Cancelled” group skews definitively younger than the “Active” group.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the 4 compiled plots</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>(plot_d1 <span class="sc">|</span> plot_d2) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex01_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>1. Aggregate Loss Ratio by Driver Age</strong></p>
+<ul>
+<li><p>Surprisingly, the <strong>Adult (25-40)</strong> demographic is the least profitable segment, exhibiting the highest aggregate loss ratio at 73.6%.</p></li>
+<li><p>The <strong>Youth (&lt;25)</strong> demographic actually has the most favorable loss ratio (63.3%), suggesting that the significantly higher premiums typically charged to young drivers are currently more than sufficient to cover their aggregate losses.</p></li>
+</ul>
+<p><strong>2. Claim Frequency by Driver Age</strong></p>
+<ul>
+<li><p>There is a strict, linear downward trend in claim frequency as driver age increases.</p></li>
+<li><p><strong>Youth (&lt;25)</strong> are the most volatile, filing claims at a massive rate of 0.517 per exposure year—nearly double the frequency of the safest group, <strong>Seniors (60+)</strong>, who file at a rate of just 0.264.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>(plot_d3 <span class="sc">|</span> plot_d4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex01_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>3. Severity by Driver Age (&gt;0 Claims)</strong></p>
+<ul>
+<li><p>When accidents do occur, the median financial impact follows a “U-shaped” curve.</p></li>
+<li><p><strong>Seniors (60+)</strong> and <strong>Youth (&lt;25)</strong> experience the most severe claims (median severities of €714.47 and €713.75, respectively), while the <strong>Adult (25-40)</strong> segment experiences the cheapest typical accidents (€599.66).</p></li>
+</ul>
+<p><strong>4. Driver Age by Cancellation Status</strong></p>
+<ul>
+<li><p>Age is not a dominating factor in policy cancellation. The median age of active customers (48) is only marginally higher than the median age of customers who cancelled (46).</p></li>
+<li><p>However, the lower median age for cancellations slightly hints that younger, less established policyholders might be marginally more prone to churn or shop around.</p></li>
+</ul>
+</section>
+<section id="car-drivers" class="level4">
+<h4 class="anchored" data-anchor-id="car-drivers">4.3 Car Drivers</h4>
+<ul>
+<li><p><strong>Loss Ratio by Vehicle Age:</strong> Tests whether insuring brand-new cars is more or less profitable than insuring older cars. This is important for pricing accuracy, as older cars might have lower premiums but could be disproportionately expensive to repair if parts are scarce.</p></li>
+<li><p><strong>Claim Frequency by Vehicle Age:</strong> Tests if the age of the car impacts how often the owner files a claim. This is important to know because owners of brand-new cars are highly sensitive to minor cosmetic damage and may file claims constantly, whereas owners of older cars might only file a claim for a major collision.</p></li>
+<li><p><strong>Claim Severity by Fuel Type:</strong> Tests whether diesel vehicles cost more to repair or replace than petrol vehicles after an accident. This is important for understanding supply chain impacts, parts pricing, and whether certain engine types generate more severe total losses.</p></li>
+<li><p><strong>Premium Rate by Fuel Type:</strong> Tests if the pricing algorithm currently charges more for a specific fuel type. This is important to compare against the severity test—if diesel cars are charged significantly higher premiums but don’t actually cost more to repair, the pricing model may be unfairly penalizing them.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A. Aggregate Loss Ratio by Vehicle Age Group</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>p_val_c1 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(loss_ratio <span class="sc">~</span> vehicle_age_group, <span class="at">data =</span> <span class="fu">filter</span>(insurance_data, total_claims <span class="sc">&gt;</span> <span class="dv">0</span>, loss_ratio <span class="sc">&lt;</span> <span class="dv">10</span>)))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>plot_c1 <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vehicle_age_group) <span class="sc">%&gt;%</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">agg_lr =</span> <span class="fu">sum</span>(total_incurred, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(total_premium, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">.groups=</span><span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> vehicle_age_group, <span class="at">y =</span> agg_lr, <span class="at">fill =</span> vehicle_age_group)) <span class="sc">+</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(agg_lr, <span class="at">accuracy =</span> <span class="fl">0.1</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent, <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Aggregate Loss Ratio by Vehicle Age"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ANOVA p-value:"</span>, p_val_c1), <span class="at">y =</span> <span class="st">"Loss Ratio"</span>, <span class="at">x =</span> <span class="st">"Vehicle Age Group"</span>) <span class="sc">+</span> </span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="co"># B. Average Claim Frequency by Vehicle Age Group</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>p_val_c2 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(claim_frequency <span class="sc">~</span> vehicle_age_group, <span class="at">data =</span> insurance_data))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>plot_c2 <span class="ot">&lt;-</span> insurance_data <span class="sc">%&gt;%</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vehicle_age_group) <span class="sc">%&gt;%</span></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_freq =</span> <span class="fu">sum</span>(total_claims, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(total_exposure, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">.groups=</span><span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> vehicle_age_group, <span class="at">y =</span> avg_freq, <span class="at">fill =</span> vehicle_age_group)) <span class="sc">+</span></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">number</span>(avg_freq, <span class="at">accuracy =</span> <span class="fl">0.001</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Claim Frequency by Vehicle Age"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ANOVA p-value:"</span>, p_val_c2), <span class="at">y =</span> <span class="st">"Claims per Exposure Year"</span>, <span class="at">x =</span> <span class="st">"Vehicle Age Group"</span>) <span class="sc">+</span> </span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a><span class="co"># C. Claim Severity by Fuel Type (Boxplot - Claimants Only)</span></span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a>p_val_c3 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(claim_severity <span class="sc">~</span> fuel_type, <span class="at">data =</span> <span class="fu">filter</span>(insurance_data, total_claims <span class="sc">&gt;</span> <span class="dv">0</span>)))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>plot_c3 <span class="ot">&lt;-</span> <span class="fu">filter</span>(insurance_data, total_claims <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> fuel_type, <span class="at">y =</span> claim_severity, <span class="at">fill =</span> fuel_type)) <span class="sc">+</span></span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">outlier.alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> median, <span class="at">geom =</span> <span class="st">"label"</span>, <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(<span class="fu">after_stat</span>(y), <span class="at">prefix=</span><span class="st">"€"</span>)), <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Pastel2"</span>) <span class="sc">+</span></span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Severity by Fuel Type (&gt;0 Claims)"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ANOVA p-value:"</span>, p_val_c3), <span class="at">y =</span> <span class="st">"Severity (€, log scale)"</span>, <span class="at">x =</span> <span class="st">"Fuel Type"</span>) <span class="sc">+</span> </span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a><span class="co"># D. Premium Rate by Fuel Type (Boxplot)</span></span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a>p_val_c4 <span class="ot">&lt;-</span> <span class="fu">format.pval</span>(<span class="fu">summary</span>(<span class="fu">aov</span>(premium_rate <span class="sc">~</span> fuel_type, <span class="at">data =</span> insurance_data))[[<span class="dv">1</span>]][[<span class="st">"Pr(&gt;F)"</span>]][<span class="dv">1</span>], <span class="at">eps=</span><span class="fl">0.001</span>)</span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a>plot_c4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(insurance_data, <span class="fu">aes</span>(<span class="at">x =</span> fuel_type, <span class="at">y =</span> premium_rate, <span class="at">fill =</span> fuel_type)) <span class="sc">+</span></span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">outlier.alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> median, <span class="at">geom =</span> <span class="st">"label"</span>, <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(<span class="fu">after_stat</span>(y), <span class="at">prefix=</span><span class="st">"€"</span>)), <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Pastel2"</span>) <span class="sc">+</span></span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Premium Rate by Fuel Type"</span>, <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"ANOVA p-value:"</span>, p_val_c4), <span class="at">y =</span> <span class="st">"Annualized Premium (€)"</span>, <span class="at">x =</span> <span class="st">"Fuel Type"</span>) <span class="sc">+</span> </span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Standard Bar Charts (Visualizations 1 &amp; 2)</strong></p>
+<ul>
+<li><p><strong>Explanation:</strong> These charts display single, pre-calculated summary metrics (such as a total percentage for Loss Ratio or a single average for Claim Frequency) across distinct categorical groups.</p></li>
+<li><p><strong>Justification:</strong> Bar charts are the optimal choice for presenting aggregated data. They provide a clean, absolute comparison of final, single-point metrics side-by-side, making them highly effective for highlighting distinct operational differences between defined categories.</p></li>
+</ul>
+<p><strong>Boxplots (Visualizations 3 &amp; 4)</strong></p>
+<ul>
+<li><p><strong>Explanation:</strong> These charts plot the continuous distribution of raw, unaggregated financial data (such as thousands of individual premium charges or specific claim payouts) against categorical groups.</p></li>
+<li><p><strong>Justification:</strong> Boxplots are strictly required when evaluating financial data due to the inherent presence of extreme outliers (e.g., a total vehicle write-off or an extremely expensive commercial policy). A standard bar chart displaying a simple average would be severely distorted by these extremes. Boxplots effectively display the entire spread of the data, revealing the true median (the typical value) while visually isolating extreme upper-tail anomalies.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the 4 compiled plots</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>(plot_c1 <span class="sc">|</span> plot_c2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex01_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>1. Aggregate Loss Ratio by Vehicle Age</strong></p>
+<ul>
+<li><p><strong>Mid (3-7)</strong> year-old vehicles are the least profitable segment, operating at the highest aggregate loss ratio of 74.8%.</p></li>
+<li><p><strong>New (0-2)</strong> vehicles are the most profitable asset class for the portfolio, maintaining a healthy loss ratio of just 66.4%.</p></li>
+</ul>
+<p><strong>2. Claim Frequency by Vehicle Age</strong></p>
+<ul>
+<li><p>There is a strict, inverse relationship between vehicle age and claim frequency: the newer the car, the more often the driver files a claim.</p></li>
+<li><p><strong>New (0-2)</strong> vehicles exhibit a high frequency of 0.571 claims per exposure year. This is nearly double the rate of <strong>Old (8+)</strong> vehicles (0.303), suggesting owners of brand-new cars are highly sensitive to minor damage (like scratches or dents) and utilize their insurance more readily, while owners of older beaters likely ignore minor issues</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>(plot_c3 <span class="sc">|</span> plot_c4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex01_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>3. Severity by Fuel Type (&gt;0 Claims)</strong></p>
+<ul>
+<li><p>The median claim payout for <strong>G</strong> (Gasoline/Petrol) vehicles is €679.64, slightly higher than <strong>D</strong> (Diesel) vehicles at €630.85.</p></li>
+<li><p>However, the high ANOVA p-value (0.5422) proves this difference is <strong>not statistically significant</strong>. Fuel type does not meaningfully dictate how expensive an accident will be once a crash occurs.</p></li>
+</ul>
+<p><strong>4. Premium Rate by Fuel Type</strong></p>
+<ul>
+<li><p>Despite claim severity being statistically equal, <strong>D</strong> (Diesel) policies are charged a significantly higher baseline premium, with a median of €380.02 compared to Gasoline’s €307.73.</p></li>
+<li><p>The p-value (&lt; 0.001) confirms this is a structural pricing difference. The pricing engine heavily penalizes diesel vehicles, likely due to assumptions about them being driven for higher annual mileages or having a higher initial baseline asset value.</p></li>
+</ul>
+</section>
+</section>
+<section id="key-findings-and-application" class="level3">
+<h3 class="anchored" data-anchor-id="key-findings-and-application">5. Key Findings and Application</h3>
+<section id="key-findings" class="level4">
+<h4 class="anchored" data-anchor-id="key-findings">5.1 Key Findings</h4>
+<ul>
+<li><p><strong>Pricing Misalignment in Demographics:</strong> The portfolio’s pricing model over-penalizes young drivers and under-prices middle-aged drivers. Despite <strong>Youth (&lt;25)</strong> having the highest claim frequency and severity, their premiums are so high that they are actually the most profitable segment (63.2% loss ratio). Conversely, <strong>Adults (25-40)</strong> are the least profitable (73.6% loss ratio), indicating their premiums are too low to cover their aggregate risk.</p></li>
+<li><p><strong>The “Mid-Aged” Vehicle Squeeze:</strong> A similar pricing misalignment exists for assets. <strong>New cars (0-2 years)</strong> claim the most often (likely for minor cosmetic fixes) but are highly profitable (66.2% loss ratio). <strong>Mid-aged cars (3-7 years)</strong> are the portfolio’s biggest drain (74.8% loss ratio), likely because they are no longer under manufacturer warranties but still retain enough value to require expensive repairs.</p></li>
+<li><p><strong>Severe Product Exploitation:</strong> The <strong>COMP_N</strong> policy type is structurally broken or being exploited. An average frequency of 1.043 claims per exposure year means the typical customer in this segment files more than one claim annually.</p></li>
+<li><p><strong>Targeted Churn Crisis:</strong> Retention is generally stable, but Business Type <strong>P</strong> is bleeding customers at a 17.3% cancellation rate—more than double the rate of Business Type <strong>NB</strong>.</p></li>
+<li><p><strong>Unjustified Fuel Surcharges:</strong> <strong>Diesel (D)</strong> vehicles are charged a statistically significantly higher baseline premium than <strong>Gasoline (G)</strong> vehicles, despite ANOVA testing proving there is zero statistical difference in claim severity between the two fuel types.</p></li>
+</ul>
+</section>
+<section id="business-applications-recommendations" class="level4">
+<h4 class="anchored" data-anchor-id="business-applications-recommendations">5.2 Business Applications &amp; Recommendations</h4>
+<ul>
+<li><p><strong>Rebalance the Pricing Engine:</strong></p>
+<ul>
+<li><p>Implement rate increases for the <strong>Adult (25-40)</strong> demographic and vehicles aged <strong>3-7 years</strong> to bring their loss ratios back under the 70% target threshold.</p></li>
+<li><p>Consider slightly lowering rates for <strong>Youth (&lt;25)</strong> drivers. Because they are highly profitable, a small rate decrease could capture significant market share from competitors without destroying the segment’s margin.</p></li>
+</ul></li>
+<li><p><strong>Overhaul the COMP_N Policy:</strong> Halt or restrict new business for the COMP_N policy immediately pending a review. Introduce higher deductibles (excess), limit the number of allowable claims per year, or drastically increase the base premium to counter the extreme frequency.</p></li>
+<li><p><strong>Deploy a Retention Taskforce for Business Type ‘P’:</strong> Launch targeted interventions (e.g., loyalty discounts, courtesy check-ins, or exit surveys) specifically aimed at Business Type ‘P’ customers as their renewal dates approach to stem the 17.3% churn rate.</p></li>
+<li><p><strong>Review Diesel Underwriting:</strong> Investigate why the pricing model heavily penalizes diesel. If it is based on outdated assumptions rather than actual mileage data, flattening the fuel-type multiplier could make your quotes more competitive for diesel drivers without increasing portfolio severity.</p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,5 +1,5 @@
 ---
-title: "Insurance Portfolio Analysis"
+title: "Insurance Analysis"
 subtitle: "Key Findings & Strategic Insights"
 author: "Brandon Komajaya"
 date: "24 May 2026"

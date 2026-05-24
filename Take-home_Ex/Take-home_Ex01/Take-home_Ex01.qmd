@@ -1,5 +1,5 @@
 ---
-title: "In-Class Exercise 1"
+title: "Take-Home Exercise 1"
 author: "Brandon Komajaya"
 date: "24 May 2026"
 date-modified: "last-modified"

@@ -408,9 +408,6 @@ plot_g4 <- ggplot(insurance_data, aes(x = municipality_type, y = premium_rate, f
 **Bar Charts (Visualization 1, 2 & 3)**
 
 - Explanation: This combined visual analysis utilizes standard and 100% stacked bar charts to evaluate key portfolio metrics across distinct categorical groupings. The charts display the aggregate loss ratio across three municipality types (C, I, and IS), the average claim frequency per exposure year across various policy types (CC, COMP_E, COMP_N, TP, TPG), and the proportion of active versus cancelled policies between two business types ("NB" and "P"). A Chi-Square p-value is included in the retention analysis to indicate the statistical significance of the variance.
-
-<!-- -->
-
 - Justification: Bar charts are the optimal methodological choice for presenting and comparing aggregated data and part-to-whole relationships across discrete categories. The standard vertical bar charts allow for rapid visual assessment of profitability and risk, clearly demonstrating that loss ratios remain stable across municipalities (ranging from 69.9% to 71.1%) while starkly highlighting the abnormally high claim frequency anomaly of the "COMP_N" policy (1.043 claims per year) against the rest of the portfolio. For the retention analysis, the 100% stacked bar chart is the standard method; by forcing both bars to a uniform height representing exactly 100%, the visual perfectly contrasts the relative cancellation rates (7.9% for NB versus 17.3% for P) without being distorted by the absolute total volume of policies existing within each business group.
 
 **Boxplots (Visualization 4)**

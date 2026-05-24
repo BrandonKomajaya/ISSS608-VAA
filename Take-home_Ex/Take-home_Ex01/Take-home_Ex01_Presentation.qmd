@@ -1,5 +1,5 @@
 ---
-title: "Motor Insurance Portfolio Analysis"
+title: "Insurance Portfolio Analysis"
 subtitle: "Bivariate Analysis & Strategic Insights"
 author: "Brandon Komajaya"
 date: "24 May 2026"
@@ -46,7 +46,6 @@ The primary objective of this analysis is to transition operations from basic hi
 
 ::::: columns
 ::: {.column width="50%"}
-
 - **Data Quality:** Handled anomalies and dropped incomplete records (`drop_na`).
   - Due to their size outliers remained in the dataset.
 - **Categorization:** Bucketed continuous ages into discrete analytical tiers (e.g., Youth, Adult, New, Old).
@@ -72,7 +71,7 @@ To ensure the analysis was structurally sound, rigorous data wrangling was essen
 
 ::::: columns
 ::: {.column width="50%"}
-![](images/WhatsApp Image 2026-05-24 at 9.53.57 PM-01.jpeg){width="428"}
+![](images/WhatsApp%20Image%202026-05-24%20at%209.53.57%20PM-01.jpeg){width="428"}
 
 ![](images/clipboard-3818220761.jpeg){width="420"}
 :::
@@ -94,13 +93,12 @@ Before diving into complex correlations, an Exploratory Data Analysis was conduc
 
 ::::: columns
 ::: {.column width="50%"}
-![](images/WhatsApp Image 2026-05-24 at 9.59.28 PM.jpeg){width="431"}
+![](images/WhatsApp%20Image%202026-05-24%20at%209.59.28%20PM.jpeg){width="431"}
 
-![](images/WhatsApp Image 2026-05-24 at 9.59.28 PM (1).jpeg){width="434"}
+![](images/WhatsApp%20Image%202026-05-24%20at%209.59.28%20PM%20(1).jpeg){width="434"}
 :::
 
 ::: {.column width="50%"}
-
 - **Anomaly (COMP_N):** Frequency exceeds **1.043 claims per exposure year**.
 - **Retention Crisis:** Business Type **P** exhibits a **17.3% cancellation rate**.
 - **Statistical Proof:** Chi-Square testing confirmed the retention variance across business types is highly significant.
@@ -117,7 +115,7 @@ Moving into the bivariate analysis, the General Drivers evaluation uncovered two
 
 ::::: columns
 ::: {.row height="50%"}
-![](images/WhatsApp Image 2026-05-24 at 10.00.54 PM.jpeg){fig-align="center"}
+![](images/WhatsApp%20Image%202026-05-24%20at%2010.00.54%20PM.jpeg){fig-align="center"}
 :::
 
 ::: {.row height="50%"}
@@ -137,7 +135,7 @@ Demographic testing revealed a fascinating and highly actionable pricing paradox
 
 ::::: columns
 ::: {.column width="50%"}
-![](images/WhatsApp Image 2026-05-24 at 10.00.54 PM (1).jpeg){width="644"}
+![](images/WhatsApp%20Image%202026-05-24%20at%2010.00.54%20PM%20(1).jpeg){width="644"}
 :::
 
 ::: {.column width="50%"}
@@ -159,7 +157,7 @@ When claim frequency is decoupled from claim severity, the mechanical driver beh
 
 ::::: columns
 ::: {.column width="50%"}
-![](images/WhatsApp Image 2026-05-24 at 10.01.53 PM.jpeg){width="645"}
+![](images/WhatsApp%20Image%202026-05-24%20at%2010.01.53%20PM.jpeg){width="645"}
 :::
 
 ::: {.column width="50%"}
@@ -179,7 +177,7 @@ A nearly identical margin squeeze is observed when analyzing the vehicle lifecyc
 
 ::::: columns
 ::: {.column width="50%"}
-![](images/WhatsApp Image 2026-05-24 at 10.01.53 PM (1).jpeg){width="653"}
+![](images/WhatsApp%20Image%202026-05-24%20at%2010.01.53%20PM%20(1).jpeg){width="653"}
 :::
 
 ::: {.column width="50%"}

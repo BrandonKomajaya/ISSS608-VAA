@@ -1,4 +1,6 @@
 ---
+title: "Hands_on_Ex07"
+author: "Brandon Komajaya"
 title: "Hands-on Exercise 7"
 date: "1 Jun 2026"
 date-modified: "last-modified"

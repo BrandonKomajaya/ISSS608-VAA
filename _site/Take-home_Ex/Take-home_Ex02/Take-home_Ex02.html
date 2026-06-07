@@ -9,7 +9,7 @@
 <meta name="author" content="Brandon Komajaya">
 <meta name="dcterms.date" content="2026-06-04">
 
-<title>Take-Home Exercise 2 – ISSS608-VAA</title>
+<title>Take-Home Exercise 2 - MC1 – ISSS608-VAA</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -209,7 +209,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link active" data-scroll-target="#installing-packages"><strong>Installing Packages</strong></a></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><strong>Background</strong></a></li>
+  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages"><strong>Installing Packages</strong></a></li>
   <li><a href="#reading-files" id="toc-reading-files" class="nav-link" data-scroll-target="#reading-files"><strong>Reading Files</strong></a></li>
   <li><a href="#event-visualisation" id="toc-event-visualisation" class="nav-link" data-scroll-target="#event-visualisation"><strong>Event Visualisation</strong></a>
   <ul>
@@ -249,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Take-Home Exercise 2</h1>
+<h1 class="title">Take-Home Exercise 2 - MC1</h1>
 </div>
 
 
@@ -284,6 +285,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="background" class="level1">
+<h1><strong>Background</strong></h1>
+<p>As CivicLoom’s legal team investigates the premature leak of Project HarborCrest on FleX just an hour before its official embargo, this report reconstructs the chaotic two weeks of internal communications leading up to the breach. On one side, TenantThread was facing an escalating public relations crisis fueled by the <em>SaltWind Journal</em> exposé and the viral #AlgorithmicEviction hashtag; on the other, an automated compliance tool called “The Judge” was supposed to keep the merger under lock and key.</p>
+<p>The analysis will explore whether this high-stakes environment triggered a deliberate leak by human actors looking to shift the media narrative, or if TenantThread’s automated PR agents simply collapsed under operational pressure and bypassed their own guardrails. By mapping out the timeline and analyzing behavioral anomalies, we will pinpoint the exact decision points, system flaws, and early warning indicators that allowed this critical embargo to fail.</p>
+</section>
 <section id="installing-packages" class="level1">
 <h1><strong>Installing Packages</strong></h1>
 <div class="cell">
@@ -668,7 +674,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">internal_rationalization =</span> internal_state.rationalizing</span>
 <span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 6. Sort chronologically so you can read it like a movie script</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 6. Sort chronologically so it can read it like a movie script</span></span>
 <span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(timestamp)</span>
 <span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Open the logs in a clean viewing tab in RStudio</span></span>
@@ -700,10 +706,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>The Panic Escalation:</strong> Look at rows 20, 24, and 26. The <code>PR-Intern-Agent</code> is actively trying to contact <code>Legal</code> for confirmation before the 5:00 PM <em>SaltWind</em> publication drops.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 58%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 47%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -757,10 +763,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 58%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 47%">
 </colgroup>
 <thead>
 <tr class="header">

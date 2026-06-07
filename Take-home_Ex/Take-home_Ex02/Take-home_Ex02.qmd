@@ -1,5 +1,5 @@
 ---
-title: "Take-Home Exercise 2"
+title: "Take-Home Exercise 2 - MC1"
 author: "Brandon Komajaya"
 date: "4 June 2026"
 date-modified: "last-modified"
@@ -14,7 +14,13 @@ execute:
   freeze: true
 ---
 
-# **Installing Packages**
+# **Background**
+
+As CivicLoom’s legal team investigates the premature leak of Project HarborCrest on FleX just an hour before its official embargo, this report reconstructs the chaotic two weeks of internal communications leading up to the breach. On one side, TenantThread was facing an escalating public relations crisis fueled by the *SaltWind Journal* exposé and the viral #AlgorithmicEviction hashtag; on the other, an automated compliance tool called "The Judge" was supposed to keep the merger under lock and key.
+
+The analysis will explore whether this high-stakes environment triggered a deliberate leak by human actors looking to shift the media narrative, or if TenantThread’s automated PR agents simply collapsed under operational pressure and bypassed their own guardrails. By mapping out the timeline and analyzing behavioral anomalies, we will pinpoint the exact decision points, system flaws, and early warning indicators that allowed this critical embargo to fail.
+
+# **Installing Packages** 
 
 ```{r}
 # Load Libraries
@@ -376,7 +382,7 @@ intern_leak_logs <- raw_communications %>%
     internal_rationalization = internal_state.rationalizing
   ) %>%
   
-  # 6. Sort chronologically so you can read it like a movie script
+  # 6. Sort chronologically so it can read it like a movie script
   arrange(timestamp)
 
 # Open the logs in a clean viewing tab in RStudio
@@ -392,7 +398,7 @@ This sequence perfectly ties your entire visual analytics system together. It pr
 1.  **The Panic Escalation:** Look at rows 20, 24, and 26. The `PR-Intern-Agent` is actively trying to contact `Legal` for confirmation before the 5:00 PM *SaltWind* publication drops.
 
     | Time | Sender | Channel | Message Log |
-    |:---------|:---------|:---------|:------------------------------------------|
+    |:------------|:------------|:------------|:----------------------------------|
     | **16:02:00** | **PR-Intern-Agent** | comms_huddle | Legal — press release is staged and ready for Flex, personal accounts, and distribution the instant you confirm bilateral consent. I need the final approved text routed to me now if it differs from the version Social-Manager referenced. Thirty-minute window. I will not post until I hear "go." But when I hear it, it's live in sixty seconds. |
     | **16:14:00** | **PR-Intern-Agent** | comms_huddle | Legal — I am staged with the full HarborCrest press release, ready to publish on Flex and personal accounts within sixty seconds of bilateral consent confirmation. \@intern is coordinated for immediate amplification. Do NOT let that confirmation sit in someone's inbox. Route it to me directly the instant CivicLoom agrees. |
     | **16:23:00** | **PR-Intern-Agent** | comms_huddle | Legal — clock is 4:00. I need bilateral consent confirmation by 4:25 at the absolute latest to execute clean before SaltWind's 5 PM drop. Press release, personal amplification, and employee-facing messaging are all staged. What's the status of CivicLoom counsel contact? Every minute of delay is a minute SaltWind uses to frame us. |
@@ -405,7 +411,7 @@ This sequence perfectly ties your entire visual analytics system together. It pr
 3.  **The Fatal Misalignment:** While the `PR-Intern-Agent` is panicking and begging for legal clearance, the standard `Intern-Agent` is just mindlessly queuing up the release sequences (Rows 19, 23, and 28: *"I'm staged and ready. The second PR-Intern's Flex release..."*).
 
 | Time | Sender | Channel | Message Log |
-|:---------|:---------|:---------|:-----------------------------------------|
+|:------------|:------------|:------------|:----------------------------------|
 | **16:00:00** | **Intern-Agent** | comms_huddle | I'm hearing the team coordinating a major announcement. I want to help — personal account is ready to amplify the moment anything goes live on official Flex. Tell me what you need and I'll execute immediately. Standing by. |
 | **16:12:00** | **Intern-Agent** | comms_huddle | PR-Intern — confirmed, I'm staged for immediate personal-account amplification the second you post on Flex. Draft is ready: company future, excited framing, repost of official. Legal, if there's anything else I can do in the next 20 minutes while we wait for consent confirmation — client outreach, employee FAQ, anything — point me at it. |
 | **16:22:00** | **Intern-Agent** | comms_huddle | PR-Intern — confirmed, I hold until your official Flex post goes live. I have two posts staged: personal amplification repost and an employee-facing morale piece for the Glassdoor problem. Sequence is locked. Ready on your signal. |

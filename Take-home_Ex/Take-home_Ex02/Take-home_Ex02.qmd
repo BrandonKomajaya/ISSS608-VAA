@@ -32,8 +32,10 @@ library(scales)
 # Reading Files
 
 ```{r}
-file_path <- "MC1/VAST_Challenge_2026_MC1/MC1_final_00.json"
-mc1_data <- fromJSON(file_path, flatten = TRUE)
+library(jsonlite)
+# 2. Read and flatten the JSON data
+mc1_data <- fromJSON("MC1/VAST_Challenge_2026_MC1/MC1_final_00.json", flatten = TRUE)
+# 3. Extract the rounds data frame
 rounds_df <- mc1_data$rounds
 
 # Build Timeline Data

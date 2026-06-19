@@ -1,0 +1,708 @@
+---
+title: "Hands-on_Ex09"
+author: "Brandon Komajaya"
+date: "19 June 2026"
+date-modified: "last-modified"
+execute:
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# Exercise 9A
+
+# Overview
+
+This hands-on exercise covers [Chapter 2: Choropleth Mapping with R](https://r4gdsa.netlify.app/chap02).
+
+I learned about the following:
+
+- Creating thematic/choropleth maps with `tmap`
+- Quantile and equal classification
+
+# Getting Started
+
+## Preparing the datasets
+
+### **Geospatial**
+
+- Master Plan 2014 Subzone Boundary (Web) from [data.gov.sg](https://data.gov.sg/)
+
+### **Aspatial**
+
+- Singapore Residents by Planning Area / Subzone, Age Group, Sex and Type of Dwelling, June 2011-2020 from [Department of Statistics, Singapore](https://www.singstat.gov.sg/)
+
+Next, is putting them under the `Hands-on_Ex1` directory, with the following file structure:
+
+``` bash
+Hands-on_Ex1 └── data     ├── aspatial     │   └── respopagesextod2011to2020.csv     └── geospatial         ├── MP14_SUBZONE_WEB_PL.dbf         ├── MP14_SUBZONE_WEB_PL.prj         ├── MP14_SUBZONE_WEB_PL.sbn         ├── MP14_SUBZONE_WEB_PL.sbx         ├── MP14_SUBZONE_WEB_PL.shp         ├── MP14_SUBZONE_WEB_PL.shp.xml         └── MP14_SUBZONE_WEB_PL.shx
+```
+
+## Installing R packages
+
+I used the code below to install the R packages used in the exercise:
+
+```{r}
+pacman::p_load(sf, tidyverse, tmap)
+```
+
+# Data Wrangling
+
+## Importing geospatial data
+
+To import the MPSZ data set to RStudio, I used the same code chunk in the previous exercise.
+
+```{r}
+mpsz <- st_read(dsn = "data", layer = "MP14_SUBZONE_WEB_PL")
+```
+
+## Importing aspatial data
+
+The csv data is an aspatial data so `read_csv()` must be used instead of `st_read()`:
+
+```{r}
+popdata <- read_csv("data/respopagesextod2011to2020.csv")
+```
+
+## Data preparation
+
+```{r}
+popdata2020 <- popdata %>%
+  filter(Time == 2020) %>%
+  group_by(PA, SZ, AG) %>%
+  summarise(`POP` = sum(`Pop`)) %>%
+  ungroup()%>%
+  pivot_wider(names_from=AG, 
+              values_from=POP) %>%
+  mutate(YOUNG = rowSums(.[3:6])
+         +rowSums(.[12])) %>%
+mutate(`ECONOMY ACTIVE` = rowSums(.[7:11])+
+rowSums(.[13:15]))%>%
+mutate(`AGED`=rowSums(.[16:21])) %>%
+mutate(`TOTAL`=rowSums(.[3:21])) %>%  
+mutate(`DEPENDENCY` = (`YOUNG` + `AGED`)
+/`ECONOMY ACTIVE`) %>%
+  select(`PA`, `SZ`, `YOUNG`, 
+       `ECONOMY ACTIVE`, `AGED`, 
+       `TOTAL`, `DEPENDENCY`)
+```
+
+I don't fully understand this entire code chunk yet but I know it filtered for data from 2020 only and did some aggregations based on the age groups, PA, and AZ. New fields like `YOUNG` and `AGED` .
+
+Next, I joined this data with the mpsz data via `SZ`. However, we still need to make sure that the `SZ` values are uppercase to match mpsz's `SUBZONE_N.`
+
+```{r}
+popdata2020 <- popdata2020 %>%
+  mutate_at(.vars = vars(PA, SZ), 
+          .funs = list(toupper)) %>%
+  filter(`ECONOMY ACTIVE` > 0)
+```
+
+Then the 2 data sets can be joined.
+
+```{r}
+mpsz_pop2020 <- left_join(mpsz, popdata2020,
+                          by = c("SUBZONE_N" = "SZ"))
+```
+
+Lastly, write the rds of the combined data set.
+
+```{r}
+write_rds(mpsz_pop2020, "data/mpszpop2020.rds")
+```
+
+> ⚠️ This failed on the first try so I had to create the `rds` directory under `data/` before trying again.
+
+# **Choropleth Mapping Geospatial Data Using *tmap***
+
+## Using *qtm()*
+
+```{r}
+tmap_mode("plot")
+qtm(mpsz_pop2020, 
+    fill = "DEPENDENCY")
+```
+
+I tried to create an interactive map by using `view` instead of `plot` but an error about invalid polygons was returned.
+
+## Using *tmap()* elements
+
+```{r}
+library(tmap)
+tm_shape(mpsz_pop2020)+
+  tm_fill("DEPENDENCY", 
+          style = "quantile", 
+          palette = "Blues",
+          title = "Dependency ratio") +
+  tm_layout(main.title = "Distribution of Dependency Ratio by planning subzone",
+            main.title.position = "center",
+            main.title.size = 1.2,
+            legend.height = 0.45, 
+            legend.width = 0.35,
+            frame = TRUE) +
+  tm_borders(alpha = 0.5) +
+  tm_compass(type="8star", size = 2) +
+  tm_scalebar() +
+  tm_grid(alpha =0.2) +
+  tm_credits("Source: Planning Sub-zone boundary from Urban Redevelopment Authorithy (URA)\n and Population data from Department of Statistics DOS", 
+             position = c("left", "bottom"))
+```
+
+From this part, I saw that with `tm_shape` as base, thematic maps can be created by doing `+` with the tmap actions. I will explore this later but I found a good reference on where to start: <https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html>.
+
+## Classification methods
+
+### Quantile
+
+```{r}
+tm_shape(mpsz_pop2020)+
+  tm_fill("DEPENDENCY",
+          n = 5,
+          style = "jenks") +
+  tm_borders(alpha = 0.5)
+```
+
+### Equal
+
+```{r}
+tm_shape(mpsz_pop2020)+
+  tm_fill("DEPENDENCY",
+          n = 5,
+          style = "equal") +
+  tm_borders(alpha = 0.5)
+```
+
+My main takeaway for this is that the quantile classification deals with outliers better. In this data set, there is an outlier subzone. If we use equal classification, the map looks homogeneous and does not provide much information as it cannot be seen how the values from one subzone to the other differ.
+
+With quantile classification, these differences can be seen more easily despite the outlier value.
+
+## Color Scheme
+
+The color scheme can be changed by specifying the palette in `tm_fill()` like below:
+
+```{r}
+tm_shape(mpsz_pop2020)+
+  tm_fill("DEPENDENCY",
+          n = 6,
+          style = "quantile",
+          palette = "Blues") +
+  tm_borders(alpha = 0.5)
+```
+
+More colors can be found when running `tmaptools::palette_explorer()` in the console. However, it requires `shiny` and `shinyjs` to work. This is a wonderful tool as it can also simulate how the color schemes look from the perspective of people with color blindness. As these maps aim to communicate, it is important for the color schemes chosen to not just be beautiful, but also inclusive.
+
+## Map Layouts
+
+```{r}
+tm_shape(mpsz_pop2020)+
+  tm_fill("DEPENDENCY", 
+          style = "jenks", 
+          palette = "Blues", 
+          legend.hist = TRUE, 
+          legend.is.portrait = TRUE,
+          legend.hist.z = 0.1) +
+  tm_layout(main.title = "Distribution of Dependency Ratio by planning subzone \n(Jenks classification)",
+            main.title.position = "center",
+            main.title.size = 1,
+            legend.height = 0.45, 
+            legend.width = 0.35,
+            legend.outside = FALSE,
+            legend.position = c("right", "bottom"),
+            frame = FALSE) +
+  tm_borders(alpha = 0.5)
+```
+
+Adding legends to maps is very useful as it provides additional information. However, this feature should not be abused to add multiple visualizations as legend as it can cause more confusion if there is too much information to present.
+
+Map style can also be changed and it is useful to enhance the visual presentation. After doing some research, I found the other available styles in <https://cran.r-project.org/web/packages/tmap/vignettes/tmap-changes.html>.
+
+```{r}
+tm_shape(mpsz_pop2020) +
+  tm_fill("DEPENDENCY",
+          fill.scale = tm_scale_intervals(style = "quantile", values = "green")) +
+  tm_borders(fill_alpha = 0.5) +
+  tm_compass(type = "8star", size = 2) +
+  tm_scalebar(breaks = c(0, 5, 10)) +  # <--- width argument removed
+  tm_grid(lwd = 0.1, alpha = 0.2) +
+  tmap_style("natural")
+```
+
+In this example, I used the `natural` style to make it look like the map is surrounded by water (as it is naturally). Adding "furnitures" like compass and scale can also provide more perspective.
+
+## Smaller Maps
+
+```{r}
+tm_shape(mpsz_pop2020)+ 
+  tm_polygons(c("DEPENDENCY","AGED"),
+          style = c("equal", "quantile"), 
+          palette = list("Blues","Greens")) +
+  tm_layout(legend.position = c("right", "bottom"))
+```
+
+I don't find this very useful as the maps rendered might be too small to inspect. However, the facets with the region can be useful to see the data based on region.
+
+```{r}
+tm_shape(mpsz_pop2020) +
+  tm_fill("DEPENDENCY",
+          style = "quantile",
+          palette = "Greens",
+          thres.poly = 0) + 
+  tm_facets(by="REGION_N", 
+            free.coords=TRUE, 
+            drop.shapes=TRUE) +
+  tm_layout(legend.show = FALSE,
+            title.position = c("center", "center"), 
+            title.size = 20) +
+  tm_borders(alpha = 0.5)
+```
+
+## Mapping According to Criterion
+
+```{r}
+tm_shape(mpsz_pop2020[mpsz_pop2020$REGION_N=="CENTRAL REGION", ])+
+  tm_fill("DEPENDENCY", 
+          style = "quantile", 
+          palette = "Greens", 
+          legend.hist = TRUE, 
+          legend.is.portrait = TRUE,
+          legend.hist.z = 0.1) +
+  tm_layout(legend.outside = TRUE,
+            legend.height = 0.45, 
+            legend.width = 5.0,
+            legend.position = c("right", "bottom"),
+            frame = FALSE) +
+  tm_borders(alpha = 0.5)
+```
+
+I find this very useful especially if we just want to map a subset of the data. This can be used when we want to highlight information on certain regions.
+
+# Reflections
+
+- I was exhausted after doing the 2 chapters, and I must change how I do things next week. What I have been doing is understanding each part deeply first before moving on to the next. I think I should do chunks of work first before going back for deep understanding so I have more holistic view of the content and more sustainable for the duration of this course.
+
+- I find `tmap` very useful and I am looking forward to using it more as it has so many functions to visualize data. Only one's creativity limits the possibilities of using it. eval: true warning: false freeze: true ---
+
+# 1 Overview
+
+This hands-on exercise covers [Chapter 21: Choropleth Mapping with R](https://r4va.netlify.app/chap21).
+
+::: callout-note
+## ISSS624 Geospatial Analytics Applications
+
+As I took ISSS624 during the Nov term, this is just a refresher for me. I revised using my previous work.
+
+Please refer to my previous work in this chapter: <https://isss624-kjcpaas.netlify.app/hands-on_ex1/hands-on_ex1b>
+
+The notes I have here are more of additional learnings.
+:::
+
+# 2 Reflections
+
+During ISSS624, I worked with R for the first time so my learning was split towards learning R and learning about geospatial visualization with `tmap`.
+
+During that class I was just following the code examples, reading the documentations a bit but I didn't have an understanding of Grammar of Graphics.
+
+The interface of `tmap` is also quite different to `ggplot2`, especially around themes that I already familiarized myself in,
+
+This time around, I will try to improve on my previous work using the learnings from this class.
+
+# Exercise 9B
+
+# 1 Overview
+
+This hands-on exercise covers [Chapter 22: Visualising Geospatial Point Data](https://r4va.netlify.app/chap22).
+
+In this exercise, I learned:
+
+- To import an aspatial data file into R.
+
+- To convert it into simple point feature data frame and at the same time, to assign an appropriate projection reference to the newly create simple point feature data frame.
+
+- To plot interactive proportional symbol maps.
+
+# 2 Getting Started
+
+## 2.1 Loading the required packages
+
+For this exercise we will use the following R packages:
+
+- **sf**: for processing geospatial data
+
+- **tidyverse**: data analytics tools for r
+
+- **tmap**: for generating maps
+
+```{r}
+pacman::p_load(sf, tmap, tidyverse)
+```
+
+## 2.2 Importing data
+
+The data set use for this hands-on exercise is called *SGPools_svy21*. The data is in csv file format.
+
+```{r}
+sgpools <- read_csv("data/SGPools_svy21.csv")
+head(sgpools)
+```
+
+It contains a list SG Pools outlets, and their corresponding geospatial data (**XCOORD**, **YCOORD**) that we can use to plot them in a map.
+
+# 3 Data Wrangling
+
+To work with `sf` we need to convert this data to the appropriate type:
+
+```{r}
+sgpools_sf <- st_as_sf(sgpools, 
+                       coords = c("XCOORD", "YCOORD"),
+                       crs= 3414)
+head(sgpools_sf)
+```
+
+- `coords`: specify which columns the coordinate information are in
+
+- `crs`: to provide the coordinates system in epsg format. [EPSG: 3414](https://epsg.io/3414) is Singapore SVY21 Projected Coordinate System. You can search for other country’s epsg code by refering to [epsg.io](https://epsg.io/).
+
+This contains a `geometry` column which contains the geospatial representation of the provided coordinates. In this case. there are `point` data.
+
+# 4 Drawing Proportional Symbol Map
+
+To create an interactive proportional symbol map in R, the view mode of tmap will be used.
+
+The code churn below will turn on the interactive mode of tmap.
+
+```{r}
+tmap_mode("view")
+```
+
+## 4.1 Plotting an interactive point symbol map
+
+```{r}
+tm_shape(sgpools_sf)+
+tm_bubbles(col = "red",
+           size = 1,
+           border.col = "black",
+           border.lwd = 1)
+```
+
+## 4.2 Proportional point sizes
+
+The bubbles in the map above have the same sizes. Let's make the bubbles bigger the higher the winnings are.
+
+```{r}
+tm_shape(sgpools_sf)+
+tm_bubbles(col = "red",
+           size = "Gp1Gp2 Winnings",
+           border.col = "black",
+           border.lwd = 1)
+```
+
+## 4.3 Assign colors
+
+The proportional symbol map can be further improved by using the colour visual attribute. In the code chunks below, *OUTLET_TYPE* variable is used as the colour attribute variable.
+
+```{r}
+tm_shape(sgpools_sf)+
+tm_bubbles(col = "OUTLET TYPE", 
+          size = "Gp1Gp2 Winnings",
+          border.col = "black",
+          border.lwd = 1)
+```
+
+## 4.4 Adding facets
+
+The argument *sync* in *tm_facets()* can be used to produce multiple maps with synchronised zoom and pan settings.
+
+```{r}
+tm_shape(sgpools_sf) +
+  tm_bubbles(col = "OUTLET TYPE", 
+          size = "Gp1Gp2 Winnings",
+          border.col = "black",
+          border.lwd = 1) +
+  tm_facets(by= "OUTLET TYPE",
+            nrow = 1,
+            sync = TRUE)
+```
+
+Switch back to non-interactive mode
+
+```{r}
+tmap_mode("plot")
+```
+
+# 5 Reflections
+
+During ISSS624, I rarely use interactive plots as it was using up a lot for resources. However, doing it the non-interactive way was more tedious as I had to do additional wrangling of the map use in the background (in this case, Singapore map).
+
+However, the interactive map has a lot of features that I like (e.g. synchronized facets) so I'll try to use it more.
+
+# Exercise 9C
+
+# 1 Overview
+
+This hands-on exercise covers [Chapter 23: Analytical Mapping](https://r4va.netlify.app/chap23).
+
+In this exercise, I learned:
+
+- Importing geospatial data in rds format into R environment.
+- Creating cartographic quality choropleth maps by using appropriate tmap functions.
+- Creating rate map
+- Creating percentile map
+- Creating boxmap
+
+# 2 Getting Started
+
+## 2.1 Loading the required packages
+
+For this exercise we will use the following R packages:
+
+- **sf**: for processing geospatial data
+
+- **tidyverse**: data analytics tools for r
+
+- **tmap**: for generating maps
+
+```{r}
+pacman::p_load(sf, tmap, tidyverse)
+```
+
+## 2.2 Importing data
+
+The data set use for this hands-on exercise is called *NGA_wp.rds*. The data set is a polygon feature data.frame providing information on water point of Nigeria at the LGA level.
+
+```{r}
+NGA_wp <- read_rds("data/NGA_wp.rds")
+```
+
+# 3 Basic Choropleth Mapping
+
+## 3.1 Visualising distribution of non-functional water point
+
+```{r}
+p1 <- tm_shape(NGA_wp) +
+  tm_fill("wp_functional",
+          n = 10,
+          style = "equal",
+          palette = "Blues") +
+  tm_borders(lwd = 0.1,
+             alpha = 1) +
+  tm_layout(main.title = "Distribution of functional water point by LGAs",
+            legend.outside = FALSE)
+```
+
+```{r}
+p2 <- tm_shape(NGA_wp) +
+  tm_fill("total_wp",
+          n = 10,
+          style = "equal",
+          palette = "Blues") +
+  tm_borders(lwd = 0.1,
+             alpha = 1) +
+  tm_layout(main.title = "Distribution of total  water point by LGAs",
+            legend.outside = FALSE)
+```
+
+```{r}
+tmap_arrange(p2, p1, nrow = 1)
+```
+
+# 4 Choropleth Map for Rates
+
+In much of our readings we have now seen the importance to map rates rather than counts of things, and that is for the simple reason that water points are **not equally distributed in space**. That means that if we do not account for how many water points are somewhere, we end up mapping total water point size rather than our topic of interest.
+
+## 4.1 Deriving Proportion of Functional Water Points and Non-Functional Water Points
+
+We will tabulate the proportion of functional water points and the proportion of non-functional water points in each LGA.
+
+```{r}
+NGA_wp <- NGA_wp %>%
+  mutate(pct_functional = wp_functional/total_wp) %>%
+  mutate(pct_nonfunctional = wp_nonfunctional/total_wp)
+```
+
+## 4.2 Plotting map of rate
+
+```{r}
+tm_shape(NGA_wp) +
+  tm_fill("pct_functional",
+          n = 10,
+          style = "equal",
+          palette = "Blues",
+          legend.hist = TRUE) +
+  tm_borders(lwd = 0.1,
+             alpha = 1) +
+  tm_layout(main.title = "Rate map of functional water point by LGAs",
+            legend.outside = TRUE)
+```
+
+# 5 Extreme Value Maps
+
+Extreme value maps are variations of common choropleth maps where the classification is designed to highlight extreme values at the lower and upper end of the scale, with the goal of **identifying outliers**. These maps were developed in the spirit of spatializing EDA, i.e., adding spatial features to commonly used approaches in non-spatial EDA.
+
+## 5.1 Percentile Map
+
+The percentile map is a special type of quantile map with six specific categories: 0-1%,1-10%, 10-50%,50-90%,90-99%, and 99-100%. The corresponding breakpoints can be derived by means of the base R quantile command, passing an explicit vector of cumulative probabilities as c(0,.01,.1,.5,.9,.99,1). Note that the begin and endpoint need to be included.
+
+### 5.1.1 Data Preparation
+
+Step 1: Exclude records with NA by using the code chunk below.
+
+```{r}
+NGA_wp <- NGA_wp %>%   drop_na()
+```
+
+Step 2: Creating customised classification and extracting values
+
+```{r}
+percent <- c(0,.01,.1,.5,.9,.99,1)
+var <- NGA_wp["pct_functional"] %>%
+  st_set_geometry(NULL)
+quantile(var[,1], percent)
+```
+
+### 5.1.2 Creating the get.var function
+
+We will write an R function as shown below to extract a variable (i.e. *wp_nonfunctional*) as a vector out of an sf data.frame.
+
+```{r}
+get.var <- function(vname,df) {
+  v <- df[vname] %>% 
+    st_set_geometry(NULL)
+  v <- unname(v[,1])
+  return(v)
+}
+```
+
+### 5.1.3 Creating a percentile mapping function
+
+```{r}
+percentmap <- function(vnam, df, legtitle=NA, mtitle="Percentile Map"){
+  percent <- c(0,.01,.1,.5,.9,.99,1)
+  var <- get.var(vnam, df)
+  bperc <- quantile(var, percent)
+  tm_shape(df) +
+  tm_polygons() +
+  tm_shape(df) +
+     tm_fill(vnam,
+             title=legtitle,
+             breaks=bperc,
+             palette="Blues",
+          labels=c("< 1%", "1% - 10%", "10% - 50%", "50% - 90%", "90% - 99%", "> 99%"))  +
+  tm_borders() +
+  tm_layout(main.title = mtitle, 
+            title.position = c("right","bottom"))
+}
+```
+
+### 5.1.4 Plotting the map
+
+```{r}
+get.var <- function(vname, df) {
+  v <- df[vname] %>% sf::st_set_geometry(NULL)
+  v <- unname(v[,1])
+  return(v)
+}
+```
+
+```{r}
+percentmap("total_wp", NGA_wp)
+```
+
+## 5.2 Box map
+
+A box map is an augmented quartile map, with an additional lower and upper category. When there are lower outliers, then the starting point for the breaks is the minimum value, and the second break is the lower fence. In contrast, when there are no lower outliers, then the starting point for the breaks will be the lower fence, and the second break is the minimum value (there will be no observations that fall in the interval between the lower fence and the minimum value).
+
+```{r}
+ggplot(data = NGA_wp,
+       aes(x = "",
+           y = wp_nonfunctional)) +
+  geom_boxplot()
+```
+
+### 5.2.1 Creating boxbreaks function
+
+```{r}
+boxbreaks <- function(v,mult=1.5) {
+  qv <- unname(quantile(v))
+  iqr <- qv[4] - qv[2]
+  upfence <- qv[4] + mult * iqr
+  lofence <- qv[2] - mult * iqr
+  # initialize break points vector
+  bb <- vector(mode="numeric",length=7)
+  # logic for lower and upper fences
+  if (lofence < qv[1]) {  # no lower outliers
+    bb[1] <- lofence
+    bb[2] <- floor(qv[1])
+  } else {
+    bb[2] <- lofence
+    bb[1] <- qv[1]
+  }
+  if (upfence > qv[5]) { # no upper outliers
+    bb[7] <- upfence
+    bb[6] <- ceiling(qv[5])
+  } else {
+    bb[6] <- upfence
+    bb[7] <- qv[5]
+  }
+  bb[3:5] <- qv[2:4]
+  return(bb)
+}
+```
+
+### 5.2.2 Creating the get.var function
+
+```{r}
+get.var <- function(vname,df) {
+  v <- df[vname] %>% st_set_geometry(NULL)
+  v <- unname(v[,1])
+  return(v)
+}
+```
+
+Let's test the function
+
+```{r}
+var <- get.var("wp_nonfunctional", NGA_wp)  
+boxbreaks(var)
+```
+
+### 5.2.3 Boxmap function
+
+```{r}
+boxmap <- function(vnam, df, 
+                   legtitle=NA,
+                   mtitle="Box Map",
+                   mult=1.5){
+  var <- get.var(vnam,df)
+  bb <- boxbreaks(var)
+  tm_shape(df) +
+    tm_polygons() +
+  tm_shape(df) +
+     tm_fill(vnam,title=legtitle,
+             breaks=bb,
+             palette="Blues",
+          labels = c("lower outlier", 
+                     "< 25%", 
+                     "25% - 50%", 
+                     "50% - 75%",
+                     "> 75%", 
+                     "upper outlier"))  +
+  tm_borders() +
+  tm_layout(main.title = mtitle, 
+            title.position = c("left",
+                               "top"))
+}
+```
+
+## 5.2.4 Plotting the map
+
+```{r}
+tmap_mode("plot") 
+boxmap("wp_nonfunctional", NGA_wp)
+```
+
+# 6 Reflections
+
+During ISSS624, I rarely use interactive plots as it was using up a lot for resources. However, doing it the non-interactive way was more tedious as I had to do additional wrangling of the map use in the background (in this case, Singapore map).
+
+However, the interactive map has a lot of features that I like (e.g. synchronized facets) so I'll try to use it more.
